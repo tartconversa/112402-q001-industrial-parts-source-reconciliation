@@ -1,0 +1,4 @@
+order_id,asset,item,due,state
+PO-31,M1,I-11,2026-11-02,confirmed
+PO-32,M2,X-8,2026-11-08,draft
+PO-33,M3,I-12,2026-11-09,draft
