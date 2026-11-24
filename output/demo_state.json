@@ -1,0 +1,3461 @@
+{
+  "version": 1,
+  "created_at": "2026-11-24T21:55:28+00:00",
+  "sources": {
+    "S1": {
+      "id": "S1",
+      "kind": "catalog",
+      "adapter": "sample_catalog",
+      "field_map": null,
+      "frequency": "hourly",
+      "frequency_seconds": null,
+      "path": "samples/catalog.csv",
+      "url": null,
+      "batch_size": 50,
+      "enabled": true,
+      "note": "华东轴承经销商（样本 catalog.csv 内 source 列）"
+    },
+    "S2": {
+      "id": "S2",
+      "kind": "catalog",
+      "adapter": "sample_catalog",
+      "field_map": null,
+      "frequency": "every_4h",
+      "frequency_seconds": null,
+      "path": "samples/catalog.csv",
+      "url": null,
+      "batch_size": 50,
+      "enabled": true,
+      "note": "另一家经销商，字段同样本但额定负载不一致"
+    },
+    "S3S4-FEED": {
+      "id": "S3S4-FEED",
+      "kind": "catalog",
+      "adapter": "dealer_wide",
+      "field_map": null,
+      "frequency": "daily",
+      "frequency_seconds": null,
+      "path": "fixtures/dealers_extra.csv",
+      "url": null,
+      "batch_size": 50,
+      "enabled": true,
+      "note": "宽表头经销商目录，演示不同字段格式"
+    },
+    "Q-WEEKLY": {
+      "id": "Q-WEEKLY",
+      "kind": "quote_import",
+      "adapter": "quote_standard",
+      "field_map": null,
+      "frequency": "weekly",
+      "frequency_seconds": null,
+      "path": "fixtures/quotes_w43.csv",
+      "url": null,
+      "batch_size": 50,
+      "enabled": true,
+      "note": "定时导入的结构化报价"
+    },
+    "MFR-ANN": {
+      "id": "MFR-ANN",
+      "kind": "announcement",
+      "adapter": "generic",
+      "field_map": null,
+      "frequency": "twice_daily",
+      "frequency_seconds": null,
+      "path": "fixtures/announcements_initial.json",
+      "url": null,
+      "batch_size": 50,
+      "enabled": true,
+      "note": "厂商公告 JSON"
+    },
+    "MFR-WEB": {
+      "id": "MFR-WEB",
+      "kind": "announcement",
+      "adapter": "generic",
+      "field_map": null,
+      "frequency": "hourly",
+      "frequency_seconds": null,
+      "path": "fixtures/ann_lead_alert.html",
+      "url": null,
+      "batch_size": 50,
+      "enabled": true,
+      "note": "厂商公告 HTML 页面"
+    }
+  },
+  "checkpoints": {
+    "S1": {
+      "source_id": "S1",
+      "offset": 3,
+      "done": true,
+      "cursor": null,
+      "status": "success",
+      "position_description": "行 3/3",
+      "last_attempt_at": "2026-10-20T04:00:00+00:00",
+      "last_success_at": "2026-10-20T04:00:00+00:00",
+      "last_error": null,
+      "last_run_id": "RUN0027",
+      "next_allowed_at": "2026-10-20T05:00:00+00:00"
+    },
+    "S2": {
+      "source_id": "S2",
+      "offset": 3,
+      "done": true,
+      "cursor": null,
+      "status": "success",
+      "position_description": "行 3/3",
+      "last_attempt_at": "2026-10-20T04:00:00+00:00",
+      "last_success_at": "2026-10-20T04:00:00+00:00",
+      "last_error": null,
+      "last_run_id": "RUN0029",
+      "next_allowed_at": "2026-10-20T08:00:00+00:00"
+    },
+    "S3S4-FEED": {
+      "source_id": "S3S4-FEED",
+      "offset": 2,
+      "done": true,
+      "cursor": null,
+      "status": "success",
+      "position_description": "行 2/2",
+      "last_attempt_at": "2026-10-20T04:00:00+00:00",
+      "last_success_at": "2026-10-20T04:00:00+00:00",
+      "last_error": null,
+      "last_run_id": "RUN0031",
+      "next_allowed_at": "2026-10-21T04:00:00+00:00"
+    },
+    "Q-WEEKLY": {
+      "source_id": "Q-WEEKLY",
+      "offset": 3,
+      "done": true,
+      "cursor": null,
+      "status": "success",
+      "position_description": "行 3/3",
+      "last_attempt_at": "2026-10-20T04:00:00+00:00",
+      "last_success_at": "2026-10-20T04:00:00+00:00",
+      "last_error": null,
+      "last_run_id": "RUN0033",
+      "next_allowed_at": "2026-10-27T04:00:00+00:00"
+    },
+    "MFR-ANN": {
+      "source_id": "MFR-ANN",
+      "offset": 2,
+      "done": true,
+      "cursor": null,
+      "status": "success",
+      "position_description": "行 2/2",
+      "last_attempt_at": "2026-10-20T04:00:00+00:00",
+      "last_success_at": "2026-10-20T04:00:00+00:00",
+      "last_error": null,
+      "last_run_id": "RUN0035",
+      "next_allowed_at": "2026-10-20T16:00:00+00:00"
+    },
+    "MFR-WEB": {
+      "source_id": "MFR-WEB",
+      "offset": 1,
+      "done": true,
+      "cursor": null,
+      "status": "success",
+      "position_description": "行 1/1",
+      "last_attempt_at": "2026-10-20T04:00:00+00:00",
+      "last_success_at": "2026-10-20T04:00:00+00:00",
+      "last_error": null,
+      "last_run_id": "RUN0037",
+      "next_allowed_at": "2026-10-20T05:00:00+00:00"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "RUN0027",
+      "source_id": "S1",
+      "kind": "catalog",
+      "started_at": "2026-10-20T04:00:00+00:00",
+      "finished_at": "2026-10-20T04:00:00+00:00",
+      "status": "success",
+      "start_offset": 0,
+      "end_offset": 3,
+      "batches": 1,
+      "records_seen": 3,
+      "new_versions": 0,
+      "error": null
+    },
+    {
+      "run_id": "RUN0029",
+      "source_id": "S2",
+      "kind": "catalog",
+      "started_at": "2026-10-20T04:00:00+00:00",
+      "finished_at": "2026-10-20T04:00:00+00:00",
+      "status": "success",
+      "start_offset": 0,
+      "end_offset": 3,
+      "batches": 1,
+      "records_seen": 3,
+      "new_versions": 0,
+      "error": null
+    },
+    {
+      "run_id": "RUN0031",
+      "source_id": "S3S4-FEED",
+      "kind": "catalog",
+      "started_at": "2026-10-20T04:00:00+00:00",
+      "finished_at": "2026-10-20T04:00:00+00:00",
+      "status": "success",
+      "start_offset": 0,
+      "end_offset": 2,
+      "batches": 1,
+      "records_seen": 2,
+      "new_versions": 0,
+      "error": null
+    },
+    {
+      "run_id": "RUN0033",
+      "source_id": "Q-WEEKLY",
+      "kind": "quote_import",
+      "started_at": "2026-10-20T04:00:00+00:00",
+      "finished_at": "2026-10-20T04:00:00+00:00",
+      "status": "success",
+      "start_offset": 0,
+      "end_offset": 3,
+      "batches": 1,
+      "records_seen": 3,
+      "new_versions": 0,
+      "error": null
+    },
+    {
+      "run_id": "RUN0035",
+      "source_id": "MFR-ANN",
+      "kind": "announcement",
+      "started_at": "2026-10-20T04:00:00+00:00",
+      "finished_at": "2026-10-20T04:00:00+00:00",
+      "status": "success",
+      "start_offset": 0,
+      "end_offset": 2,
+      "batches": 1,
+      "records_seen": 2,
+      "new_versions": 2,
+      "error": null
+    },
+    {
+      "run_id": "RUN0037",
+      "source_id": "MFR-WEB",
+      "kind": "announcement",
+      "started_at": "2026-10-20T04:00:00+00:00",
+      "finished_at": "2026-10-20T04:00:00+00:00",
+      "status": "success",
+      "start_offset": 0,
+      "end_offset": 1,
+      "batches": 1,
+      "records_seen": 1,
+      "new_versions": 1,
+      "error": null
+    }
+  ],
+  "raw_records": {
+    "offer:S1:I-11": {
+      "key": "offer:S1:I-11",
+      "head_version_id": "RV_3ebd7c97af",
+      "version_ids": [
+        "RV_54cb43bafa",
+        "RV_8653483e6e",
+        "RV_3ebd7c97af"
+      ],
+      "head_hash": "c81a77388cccd060b8c485fb0d19a60b23d0c23c3150cfa24e9b3798d3e0fad2",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 7
+    },
+    "offer:S2:X-8": {
+      "key": "offer:S2:X-8",
+      "head_version_id": "RV_34cc63b2cb",
+      "version_ids": [
+        "RV_34cc63b2cb"
+      ],
+      "head_hash": "441a853546c1984c2b308355c3305808b6bc52d6228b380e32edb651d9348cf5",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 3
+    },
+    "offer:S1:I-12": {
+      "key": "offer:S1:I-12",
+      "head_version_id": "RV_817e702640",
+      "version_ids": [
+        "RV_817e702640"
+      ],
+      "head_hash": "356c5a07decbe983de4a75c36ad0b331117f87771da55e5c220e4953253f4e35",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 3
+    },
+    "offer:S3:BD-620H": {
+      "key": "offer:S3:BD-620H",
+      "head_version_id": "RV_f188728010",
+      "version_ids": [
+        "RV_f188728010"
+      ],
+      "head_hash": "0f0d304c42975a87eb0149ea97b245fec75a58363adf8f2af0f2e9cd2c9bc9e4",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 2
+    },
+    "offer:S4:CT45-N6": {
+      "key": "offer:S4:CT45-N6",
+      "head_version_id": "RV_ca242c6b4a",
+      "version_ids": [
+        "RV_14f9364b06",
+        "RV_ca242c6b4a"
+      ],
+      "head_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 4
+    },
+    "announcement:mfr-announcements:A-EOL-CT40": {
+      "key": "announcement:mfr-announcements:A-EOL-CT40",
+      "head_version_id": "RV_e9790ce73f",
+      "version_ids": [
+        "RV_e9790ce73f"
+      ],
+      "head_hash": "39d04e355c8d01d1ec6a5066ffb5c020c51e3f0382e4814a3df2ea551f12bbc2",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    "announcement:mfr-announcements:A-XREF-CT45": {
+      "key": "announcement:mfr-announcements:A-XREF-CT45",
+      "head_version_id": "RV_51063ca981",
+      "version_ids": [
+        "RV_51063ca981"
+      ],
+      "head_hash": "d6238ccae43764890c5aeec94aeace44422f4b40ac81d4fa253e6e389c3b2af2",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    "announcement:mfr-announcements:A-LEAD-BR620": {
+      "key": "announcement:mfr-announcements:A-LEAD-BR620",
+      "head_version_id": "RV_fa6295af59",
+      "version_ids": [
+        "RV_fa6295af59"
+      ],
+      "head_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    "announcement:MFR-ANN:A-EOL-CT40": {
+      "key": "announcement:MFR-ANN:A-EOL-CT40",
+      "head_version_id": "RV_a0af1994de",
+      "version_ids": [
+        "RV_a0af1994de"
+      ],
+      "head_hash": "39d04e355c8d01d1ec6a5066ffb5c020c51e3f0382e4814a3df2ea551f12bbc2",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    "announcement:MFR-ANN:A-XREF-CT45": {
+      "key": "announcement:MFR-ANN:A-XREF-CT45",
+      "head_version_id": "RV_f0c56d673c",
+      "version_ids": [
+        "RV_f0c56d673c"
+      ],
+      "head_hash": "d6238ccae43764890c5aeec94aeace44422f4b40ac81d4fa253e6e389c3b2af2",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    "announcement:MFR-WEB:A-LEAD-BR620": {
+      "key": "announcement:MFR-WEB:A-LEAD-BR620",
+      "head_version_id": "RV_38d7a6d1c7",
+      "version_ids": [
+        "RV_38d7a6d1c7"
+      ],
+      "head_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    }
+  },
+  "record_versions": [
+    {
+      "version_id": "RV_54cb43bafa",
+      "source_id": "S1",
+      "record_key": "offer:S1:I-11",
+      "payload": {
+        "source": "S1",
+        "item": "I-11",
+        "model": "BR-620",
+        "load": "high",
+        "available": "18",
+        "updated": "2026-10-14T09:00+08:00"
+      },
+      "payload_hash": "075ed7b02d30192b3698e8bc0939bdf8461882cf6303f40cc5c3d4ff6ce917b2",
+      "adapter": "sample_catalog",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0001",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-14T01:00:00+00:00",
+      "source_updated_raw": "2026-10-14T09:00+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 3
+    },
+    {
+      "version_id": "RV_34cc63b2cb",
+      "source_id": "S2",
+      "record_key": "offer:S2:X-8",
+      "payload": {
+        "source": "S2",
+        "item": "X-8",
+        "model": "BR620",
+        "load": "medium",
+        "available": "6",
+        "updated": "2026-10-14T10:30+08:00"
+      },
+      "payload_hash": "441a853546c1984c2b308355c3305808b6bc52d6228b380e32edb651d9348cf5",
+      "adapter": "sample_catalog",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0001",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-14T02:30:00+00:00",
+      "source_updated_raw": "2026-10-14T10:30+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 3
+    },
+    {
+      "version_id": "RV_817e702640",
+      "source_id": "S1",
+      "record_key": "offer:S1:I-12",
+      "payload": {
+        "source": "S1",
+        "item": "I-12",
+        "model": "CT-40",
+        "load": "",
+        "available": "0",
+        "updated": "2026-10-13T16:00+08:00"
+      },
+      "payload_hash": "356c5a07decbe983de4a75c36ad0b331117f87771da55e5c220e4953253f4e35",
+      "adapter": "sample_catalog",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0001",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-13T08:00:00+00:00",
+      "source_updated_raw": "2026-10-13T16:00+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 3
+    },
+    {
+      "version_id": "RV_f188728010",
+      "source_id": "S3",
+      "record_key": "offer:S3:BD-620H",
+      "payload": {
+        "dealer": "S3",
+        "distributor_sku": "BD-620H",
+        "product_name": "深沟球轴承（高负载）",
+        "mfr_name": "华轴",
+        "mfr_part_no": "BR-620",
+        "load_rating": "high",
+        "stock_qty": "40",
+        "unit_price": "58.50",
+        "currency": "CNY",
+        "lead_time_days": "5",
+        "listed_at": "2026-10-15T08:00+08:00",
+        "control_channels": ""
+      },
+      "payload_hash": "0f0d304c42975a87eb0149ea97b245fec75a58363adf8f2af0f2e9cd2c9bc9e4",
+      "adapter": "dealer_wide",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0016",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-15T00:00:00+00:00",
+      "source_updated_raw": "2026-10-15T08:00+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 2
+    },
+    {
+      "version_id": "RV_14f9364b06",
+      "source_id": "S4",
+      "record_key": "offer:S4:CT45-N6",
+      "payload": {
+        "dealer": "S4",
+        "distributor_sku": "CT45-N6",
+        "product_name": "兼容控制器",
+        "mfr_name": "智控",
+        "mfr_part_no": "CT-45",
+        "load_rating": "",
+        "stock_qty": "12",
+        "unit_price": "1280.00",
+        "currency": "CNY",
+        "lead_time_days": "10",
+        "listed_at": "2026-10-15T11:20+08:00",
+        "control_channels": "6"
+      },
+      "payload_hash": "e9a6bf41f5799d2f5f501bc03d6cfc7d2f928f3ebc3b6e9096886c28f7d6a346",
+      "adapter": "dealer_wide",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0016",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-15T03:20:00+00:00",
+      "source_updated_raw": "2026-10-15T11:20+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 2
+    },
+    {
+      "version_id": "RV_8653483e6e",
+      "source_id": "S1",
+      "record_key": "offer:S1:I-11",
+      "payload": {
+        "quote_id": "Q-W39-I11",
+        "source": "S1",
+        "dealer_sku": "I-11",
+        "mfr_part_number": "BR-620",
+        "quote_date": "2026-09-20",
+        "unit_price": "52.00",
+        "qty_available": "999",
+        "lead_time_days": "2",
+        "currency": "CNY"
+      },
+      "payload_hash": "a00d6a860d049a7683774126627e6e49ef5fc8f436e1fb2793a7e20df5d7e166",
+      "adapter": "quote_standard",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0017",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": null,
+      "source_updated_raw": null,
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 2
+    },
+    {
+      "version_id": "RV_3ebd7c97af",
+      "source_id": "S1",
+      "record_key": "offer:S1:I-11",
+      "payload": {
+        "quote_id": "Q-W43-I11",
+        "source": "S1",
+        "dealer_sku": "I-11",
+        "mfr_part_number": "BR-620",
+        "quote_date": "2026-10-16",
+        "unit_price": "55.00",
+        "qty_available": "20",
+        "lead_time_days": "7",
+        "currency": "CNY"
+      },
+      "payload_hash": "c81a77388cccd060b8c485fb0d19a60b23d0c23c3150cfa24e9b3798d3e0fad2",
+      "adapter": "quote_standard",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0017",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": null,
+      "source_updated_raw": null,
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 2
+    },
+    {
+      "version_id": "RV_ca242c6b4a",
+      "source_id": "S4",
+      "record_key": "offer:S4:CT45-N6",
+      "payload": {
+        "quote_id": "Q-W43-N45",
+        "source": "S4",
+        "dealer_sku": "CT45-N6",
+        "mfr_part_number": "CT-45",
+        "quote_date": "2026-10-16",
+        "unit_price": "1250.00",
+        "qty_available": "12",
+        "lead_time_days": "10",
+        "currency": "CNY"
+      },
+      "payload_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+      "adapter": "quote_standard",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0017",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": null,
+      "source_updated_raw": null,
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 2
+    },
+    {
+      "version_id": "RV_e9790ce73f",
+      "source_id": "mfr-announcements",
+      "record_key": "announcement:mfr-announcements:A-EOL-CT40",
+      "payload": {
+        "announcement_id": "A-EOL-CT40",
+        "manufacturer": "智控",
+        "model": "CT-40",
+        "kind": "discontinuation",
+        "title": "CT-40 控制器停产通知",
+        "published_at": "2026-10-08T10:00+08:00",
+        "effective_date": "2026-10-10",
+        "last_order_date": "2026-12-15",
+        "replacement_model": "CT-45",
+        "body": "CT-40 自 2026-10-10 起停止生产，建议迁移到 CT-45；CT-45 对 PACKER 系列的兼容性以设备型号与参数范围审批为准。",
+        "url": "https://announce.example-mfr.local/ct40-eol"
+      },
+      "payload_hash": "39d04e355c8d01d1ec6a5066ffb5c020c51e3f0382e4814a3df2ea551f12bbc2",
+      "adapter": "generic",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0018",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-08T02:00:00+00:00",
+      "source_updated_raw": "2026-10-08T10:00+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    {
+      "version_id": "RV_51063ca981",
+      "source_id": "mfr-announcements",
+      "record_key": "announcement:mfr-announcements:A-XREF-CT45",
+      "payload": {
+        "announcement_id": "A-XREF-CT45",
+        "manufacturer": "智控",
+        "model": "CT-40",
+        "kind": "replacement",
+        "title": "CT-40 到 CT-45 兼容替代索引",
+        "published_at": "2026-10-09T15:30+08:00",
+        "effective_date": "2026-10-09",
+        "replacement_model": "CT-45",
+        "equipment_models": [
+          "PACKER-300"
+        ],
+        "body": "厂商交叉索引列出 CT-45 可用于部分 PACKER 设备；这只是线索，不构成我司替代放行。",
+        "url": "https://announce.example-mfr.local/ct40-ct45-xref"
+      },
+      "payload_hash": "d6238ccae43764890c5aeec94aeace44422f4b40ac81d4fa253e6e389c3b2af2",
+      "adapter": "generic",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0018",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-09T07:30:00+00:00",
+      "source_updated_raw": "2026-10-09T15:30+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    {
+      "version_id": "RV_fa6295af59",
+      "source_id": "mfr-announcements",
+      "record_key": "announcement:mfr-announcements:A-LEAD-BR620",
+      "payload": {
+        "公告编号": "A-LEAD-BR620",
+        "厂商": "华轴",
+        "型号": "BR-620",
+        "类型": "交期变更",
+        "标题": "BR-620 交付周期延长至 45 天",
+        "发布日期": "2026-10-18",
+        "生效日期": "2026-10-18",
+        "新交期天数": "45",
+        "链接": "https://announce.example-mfr.local/br620-lead"
+      },
+      "payload_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+      "adapter": "generic",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0022",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-17T16:00:00+00:00",
+      "source_updated_raw": "2026-10-18",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    {
+      "version_id": "RV_a0af1994de",
+      "source_id": "MFR-ANN",
+      "record_key": "announcement:MFR-ANN:A-EOL-CT40",
+      "payload": {
+        "announcement_id": "A-EOL-CT40",
+        "manufacturer": "智控",
+        "model": "CT-40",
+        "kind": "discontinuation",
+        "title": "CT-40 控制器停产通知",
+        "published_at": "2026-10-08T10:00+08:00",
+        "effective_date": "2026-10-10",
+        "last_order_date": "2026-12-15",
+        "replacement_model": "CT-45",
+        "body": "CT-40 自 2026-10-10 起停止生产，建议迁移到 CT-45；CT-45 对 PACKER 系列的兼容性以设备型号与参数范围审批为准。",
+        "url": "https://announce.example-mfr.local/ct40-eol"
+      },
+      "payload_hash": "39d04e355c8d01d1ec6a5066ffb5c020c51e3f0382e4814a3df2ea551f12bbc2",
+      "adapter": "generic",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0035",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-08T02:00:00+00:00",
+      "source_updated_raw": "2026-10-08T10:00+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    {
+      "version_id": "RV_f0c56d673c",
+      "source_id": "MFR-ANN",
+      "record_key": "announcement:MFR-ANN:A-XREF-CT45",
+      "payload": {
+        "announcement_id": "A-XREF-CT45",
+        "manufacturer": "智控",
+        "model": "CT-40",
+        "kind": "replacement",
+        "title": "CT-40 到 CT-45 兼容替代索引",
+        "published_at": "2026-10-09T15:30+08:00",
+        "effective_date": "2026-10-09",
+        "replacement_model": "CT-45",
+        "equipment_models": [
+          "PACKER-300"
+        ],
+        "body": "厂商交叉索引列出 CT-45 可用于部分 PACKER 设备；这只是线索，不构成我司替代放行。",
+        "url": "https://announce.example-mfr.local/ct40-ct45-xref"
+      },
+      "payload_hash": "d6238ccae43764890c5aeec94aeace44422f4b40ac81d4fa253e6e389c3b2af2",
+      "adapter": "generic",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0035",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-09T07:30:00+00:00",
+      "source_updated_raw": "2026-10-09T15:30+08:00",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    },
+    {
+      "version_id": "RV_38d7a6d1c7",
+      "source_id": "MFR-WEB",
+      "record_key": "announcement:MFR-WEB:A-LEAD-BR620",
+      "payload": {
+        "公告编号": "A-LEAD-BR620",
+        "厂商": "华轴",
+        "型号": "BR-620",
+        "类型": "交期变更",
+        "标题": "BR-620 交付周期延长至 45 天",
+        "发布日期": "2026-10-18",
+        "生效日期": "2026-10-18",
+        "新交期天数": "45",
+        "链接": "https://announce.example-mfr.local/br620-lead"
+      },
+      "payload_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+      "adapter": "generic",
+      "adapter_version": "1.0.0",
+      "run_id": "RUN0037",
+      "fetched_at": "2026-10-20T04:00:00+00:00",
+      "source_updated_at": "2026-10-17T16:00:00+00:00",
+      "source_updated_raw": "2026-10-18",
+      "first_seen_at": "2026-10-20T04:00:00+00:00",
+      "last_seen_at": "2026-10-20T04:00:00+00:00",
+      "times_seen": 1
+    }
+  ],
+  "listings": {
+    "S1::I-11": {
+      "key": "S1::I-11",
+      "source_id": "S1",
+      "item": "I-11",
+      "name": null,
+      "model": "BR-620",
+      "spec": {
+        "category": "bearing",
+        "manufacturer": null,
+        "model": "BR-620",
+        "model_key": "BR620",
+        "name": null,
+        "dimensions": {},
+        "params": {
+          "load": {
+            "kind": "level",
+            "name": "load",
+            "value": "high",
+            "level": 4,
+            "unit": null,
+            "raw": "high"
+          }
+        }
+      },
+      "material_id": "MAT-BR620",
+      "catalog": {
+        "available": 18,
+        "price": null,
+        "currency": "CNY",
+        "lead_days": null,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S1",
+          "feed_source_id": "S2",
+          "kind": "catalog",
+          "version_id": "RV_54cb43bafa",
+          "payload_hash": "075ed7b02d30192b3698e8bc0939bdf8461882cf6303f40cc5c3d4ff6ce917b2",
+          "run_id": "RUN0029",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-14T01:00:00+00:00",
+          "source_updated_raw": "2026-10-14T09:00+08:00",
+          "adapter": "sample_catalog",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quotes": [
+        {
+          "quote_id": "Q-W39-I11",
+          "source_id": "S1",
+          "item": "I-11",
+          "model": "BR-620",
+          "terms": {
+            "available": 999,
+            "price": 52.0,
+            "currency": "CNY",
+            "lead_days": 2,
+            "min_qty": 1,
+            "provenance": {
+              "source_id": "S1",
+              "feed_source_id": "Q-WEEKLY",
+              "kind": "quote_import",
+              "version_id": "RV_8653483e6e",
+              "payload_hash": "a00d6a860d049a7683774126627e6e49ef5fc8f436e1fb2793a7e20df5d7e166",
+              "run_id": "RUN0033",
+              "fetched_at": "2026-10-20T04:00:00+00:00",
+              "source_updated_at": null,
+              "source_updated_raw": null,
+              "adapter": "quote_standard",
+              "adapter_version": "1.0.0",
+              "url": null
+            }
+          },
+          "quoted_at": "2026-09-19T16:00:00+00:00",
+          "quoted_at_raw": "2026-09-20",
+          "valid_until": null,
+          "provenance": {
+            "source_id": "S1",
+            "feed_source_id": "Q-WEEKLY",
+            "kind": "quote_import",
+            "version_id": "RV_8653483e6e",
+            "payload_hash": "a00d6a860d049a7683774126627e6e49ef5fc8f436e1fb2793a7e20df5d7e166",
+            "run_id": "RUN0033",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "source_updated_at": null,
+            "source_updated_raw": null,
+            "adapter": "quote_standard",
+            "adapter_version": "1.0.0",
+            "url": null
+          }
+        },
+        {
+          "quote_id": "Q-W43-I11",
+          "source_id": "S1",
+          "item": "I-11",
+          "model": "BR-620",
+          "terms": {
+            "available": 20,
+            "price": 55.0,
+            "currency": "CNY",
+            "lead_days": 7,
+            "min_qty": 1,
+            "provenance": {
+              "source_id": "S1",
+              "feed_source_id": "Q-WEEKLY",
+              "kind": "quote_import",
+              "version_id": "RV_3ebd7c97af",
+              "payload_hash": "c81a77388cccd060b8c485fb0d19a60b23d0c23c3150cfa24e9b3798d3e0fad2",
+              "run_id": "RUN0033",
+              "fetched_at": "2026-10-20T04:00:00+00:00",
+              "source_updated_at": null,
+              "source_updated_raw": null,
+              "adapter": "quote_standard",
+              "adapter_version": "1.0.0",
+              "url": null
+            }
+          },
+          "quoted_at": "2026-10-15T16:00:00+00:00",
+          "quoted_at_raw": "2026-10-16",
+          "valid_until": null,
+          "provenance": {
+            "source_id": "S1",
+            "feed_source_id": "Q-WEEKLY",
+            "kind": "quote_import",
+            "version_id": "RV_3ebd7c97af",
+            "payload_hash": "c81a77388cccd060b8c485fb0d19a60b23d0c23c3150cfa24e9b3798d3e0fad2",
+            "run_id": "RUN0033",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "source_updated_at": null,
+            "source_updated_raw": null,
+            "adapter": "quote_standard",
+            "adapter_version": "1.0.0",
+            "url": null
+          }
+        }
+      ],
+      "observations": [
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_54cb43bafa",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_8653483e6e",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_3ebd7c97af",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_54cb43bafa",
+          "changed": false
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_54cb43bafa",
+          "changed": false
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "quote_import",
+          "version_id": "RV_8653483e6e",
+          "changed": false
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "quote_import",
+          "version_id": "RV_3ebd7c97af",
+          "changed": false
+        }
+      ],
+      "source_differences": [],
+      "mapping": {
+        "status": "confirmed",
+        "decided_by": "auto",
+        "manual": false,
+        "material_id": "MAT-BR620",
+        "reasons": [],
+        "reference": {
+          "kind": "asset",
+          "id": "M1"
+        },
+        "comparisons": [
+          {
+            "name": "load",
+            "status": "match",
+            "a": "high",
+            "b": "high",
+            "a_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "b_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "kind": "param",
+            "reference": "asset:M1"
+          },
+          {
+            "name": "load",
+            "status": "match",
+            "a": "high",
+            "b": "high",
+            "a_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "b_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "kind": "param",
+            "reference": "asset:M2"
+          }
+        ],
+        "updated_at": "2026-11-24T21:55:29+00:00"
+      },
+      "manual_decision": null,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00"
+    },
+    "S2::X-8": {
+      "key": "S2::X-8",
+      "source_id": "S2",
+      "item": "X-8",
+      "name": null,
+      "model": "BR620",
+      "spec": {
+        "category": "bearing",
+        "manufacturer": null,
+        "model": "BR620",
+        "model_key": "BR620",
+        "name": null,
+        "dimensions": {},
+        "params": {
+          "load": {
+            "kind": "level",
+            "name": "load",
+            "value": "medium",
+            "level": 3,
+            "unit": null,
+            "raw": "medium"
+          }
+        }
+      },
+      "material_id": "MAT-BR620",
+      "catalog": {
+        "available": 6,
+        "price": null,
+        "currency": "CNY",
+        "lead_days": null,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S2",
+          "feed_source_id": "S2",
+          "kind": "catalog",
+          "version_id": "RV_34cc63b2cb",
+          "payload_hash": "441a853546c1984c2b308355c3305808b6bc52d6228b380e32edb651d9348cf5",
+          "run_id": "RUN0029",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-14T02:30:00+00:00",
+          "source_updated_raw": "2026-10-14T10:30+08:00",
+          "adapter": "sample_catalog",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quotes": [],
+      "observations": [
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_34cc63b2cb",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_34cc63b2cb",
+          "changed": false
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_34cc63b2cb",
+          "changed": false
+        }
+      ],
+      "source_differences": [],
+      "mapping": {
+        "status": "pending",
+        "decided_by": "auto",
+        "manual": false,
+        "material_id": "MAT-BR620",
+        "reasons": [
+          {
+            "code": "parameter_conflict",
+            "attribute": "load",
+            "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换"
+          }
+        ],
+        "reference": {
+          "kind": "asset",
+          "id": "M1"
+        },
+        "comparisons": [
+          {
+            "name": "load",
+            "status": "conflict",
+            "a": "medium",
+            "b": "high",
+            "a_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "medium",
+              "level": 3,
+              "unit": null,
+              "raw": "medium"
+            },
+            "b_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "kind": "param",
+            "reference": "asset:M1"
+          },
+          {
+            "name": "load",
+            "status": "conflict",
+            "a": "medium",
+            "b": "high",
+            "a_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "medium",
+              "level": 3,
+              "unit": null,
+              "raw": "medium"
+            },
+            "b_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "kind": "param",
+            "reference": "asset:M2"
+          }
+        ],
+        "updated_at": "2026-11-24T21:55:29+00:00"
+      },
+      "manual_decision": null,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00"
+    },
+    "S1::I-12": {
+      "key": "S1::I-12",
+      "source_id": "S1",
+      "item": "I-12",
+      "name": null,
+      "model": "CT-40",
+      "spec": {
+        "category": "controller",
+        "manufacturer": null,
+        "model": "CT-40",
+        "model_key": "CT40",
+        "name": null,
+        "dimensions": {},
+        "params": {}
+      },
+      "material_id": "MAT-CT40",
+      "catalog": {
+        "available": 0,
+        "price": null,
+        "currency": "CNY",
+        "lead_days": null,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S1",
+          "feed_source_id": "S2",
+          "kind": "catalog",
+          "version_id": "RV_817e702640",
+          "payload_hash": "356c5a07decbe983de4a75c36ad0b331117f87771da55e5c220e4953253f4e35",
+          "run_id": "RUN0029",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-13T08:00:00+00:00",
+          "source_updated_raw": "2026-10-13T16:00+08:00",
+          "adapter": "sample_catalog",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quotes": [],
+      "observations": [
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_817e702640",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_817e702640",
+          "changed": false
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_817e702640",
+          "changed": false
+        }
+      ],
+      "source_differences": [],
+      "mapping": {
+        "status": "pending",
+        "decided_by": "auto",
+        "manual": false,
+        "material_id": "MAT-CT40",
+        "reasons": [
+          {
+            "code": "insufficient_identity_evidence",
+            "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足"
+          }
+        ],
+        "reference": {
+          "kind": "asset",
+          "id": "M3"
+        },
+        "comparisons": [],
+        "updated_at": "2026-11-24T21:55:29+00:00"
+      },
+      "manual_decision": null,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00"
+    },
+    "S3::BD-620H": {
+      "key": "S3::BD-620H",
+      "source_id": "S3",
+      "item": "BD-620H",
+      "name": "深沟球轴承（高负载）",
+      "model": "BR-620",
+      "spec": {
+        "category": "bearing",
+        "manufacturer": "华轴",
+        "model": "BR-620",
+        "model_key": "BR620",
+        "name": "深沟球轴承（高负载）",
+        "dimensions": {},
+        "params": {
+          "load": {
+            "kind": "level",
+            "name": "load",
+            "value": "high",
+            "level": 4,
+            "unit": null,
+            "raw": "high"
+          }
+        }
+      },
+      "material_id": "MAT-BR620",
+      "catalog": {
+        "available": 40,
+        "price": 58.5,
+        "currency": "CNY",
+        "lead_days": 5,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S3",
+          "feed_source_id": "S3S4-FEED",
+          "kind": "catalog",
+          "version_id": "RV_f188728010",
+          "payload_hash": "0f0d304c42975a87eb0149ea97b245fec75a58363adf8f2af0f2e9cd2c9bc9e4",
+          "run_id": "RUN0031",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-15T00:00:00+00:00",
+          "source_updated_raw": "2026-10-15T08:00+08:00",
+          "adapter": "dealer_wide",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quotes": [],
+      "observations": [
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_f188728010",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_f188728010",
+          "changed": false
+        }
+      ],
+      "source_differences": [],
+      "mapping": {
+        "status": "confirmed",
+        "decided_by": "auto",
+        "manual": false,
+        "material_id": "MAT-BR620",
+        "reasons": [],
+        "reference": {
+          "kind": "asset",
+          "id": "M1"
+        },
+        "comparisons": [
+          {
+            "name": "load",
+            "status": "match",
+            "a": "high",
+            "b": "high",
+            "a_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "b_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "kind": "param",
+            "reference": "asset:M1"
+          },
+          {
+            "name": "load",
+            "status": "match",
+            "a": "high",
+            "b": "high",
+            "a_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "b_normalized": {
+              "kind": "level",
+              "name": "load",
+              "value": "high",
+              "level": 4,
+              "unit": null,
+              "raw": "high"
+            },
+            "kind": "param",
+            "reference": "asset:M2"
+          }
+        ],
+        "updated_at": "2026-11-24T21:55:29+00:00"
+      },
+      "manual_decision": null,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00"
+    },
+    "S4::CT45-N6": {
+      "key": "S4::CT45-N6",
+      "source_id": "S4",
+      "item": "CT45-N6",
+      "name": "兼容控制器",
+      "model": "CT-45",
+      "spec": {
+        "category": "controller",
+        "manufacturer": "智控",
+        "model": "CT-45",
+        "model_key": "CT45",
+        "name": "兼容控制器",
+        "dimensions": {},
+        "params": {
+          "control_channels": {
+            "kind": "number",
+            "name": "control_channels",
+            "value": 6.0,
+            "unit": null,
+            "raw": "6"
+          }
+        }
+      },
+      "material_id": "MAT-CT45",
+      "catalog": {
+        "available": 12,
+        "price": 1280.0,
+        "currency": "CNY",
+        "lead_days": 10,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S4",
+          "feed_source_id": "S3S4-FEED",
+          "kind": "catalog",
+          "version_id": "RV_14f9364b06",
+          "payload_hash": "e9a6bf41f5799d2f5f501bc03d6cfc7d2f928f3ebc3b6e9096886c28f7d6a346",
+          "run_id": "RUN0031",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-15T03:20:00+00:00",
+          "source_updated_raw": "2026-10-15T11:20+08:00",
+          "adapter": "dealer_wide",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quotes": [
+        {
+          "quote_id": "Q-W43-N45",
+          "source_id": "S4",
+          "item": "CT45-N6",
+          "model": "CT-45",
+          "terms": {
+            "available": 12,
+            "price": 1250.0,
+            "currency": "CNY",
+            "lead_days": 10,
+            "min_qty": 1,
+            "provenance": {
+              "source_id": "S4",
+              "feed_source_id": "Q-WEEKLY",
+              "kind": "quote_import",
+              "version_id": "RV_ca242c6b4a",
+              "payload_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+              "run_id": "RUN0033",
+              "fetched_at": "2026-10-20T04:00:00+00:00",
+              "source_updated_at": null,
+              "source_updated_raw": null,
+              "adapter": "quote_standard",
+              "adapter_version": "1.0.0",
+              "url": null
+            }
+          },
+          "quoted_at": "2026-10-15T16:00:00+00:00",
+          "quoted_at_raw": "2026-10-16",
+          "valid_until": null,
+          "provenance": {
+            "source_id": "S4",
+            "feed_source_id": "Q-WEEKLY",
+            "kind": "quote_import",
+            "version_id": "RV_ca242c6b4a",
+            "payload_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+            "run_id": "RUN0033",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "source_updated_at": null,
+            "source_updated_raw": null,
+            "adapter": "quote_standard",
+            "adapter_version": "1.0.0",
+            "url": null
+          }
+        }
+      ],
+      "observations": [
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_14f9364b06",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_ca242c6b4a",
+          "changed": true
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "catalog",
+          "version_id": "RV_14f9364b06",
+          "changed": false
+        },
+        {
+          "at": "2026-10-20T04:00:00+00:00",
+          "kind": "quote_import",
+          "version_id": "RV_ca242c6b4a",
+          "changed": false
+        }
+      ],
+      "source_differences": [],
+      "mapping": {
+        "status": "pending",
+        "decided_by": "auto",
+        "manual": false,
+        "material_id": "MAT-CT45",
+        "reasons": [
+          {
+            "code": "missing_attribute",
+            "attribute": "control_channels",
+            "message": "缺少可比对的参数 control_channels，信息不足"
+          },
+          {
+            "code": "insufficient_identity_evidence",
+            "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足"
+          }
+        ],
+        "reference": {
+          "kind": "none",
+          "id": null
+        },
+        "comparisons": [],
+        "updated_at": "2026-11-24T21:55:29+00:00"
+      },
+      "manual_decision": null,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00"
+    }
+  },
+  "quotes": {
+    "Q-W39-I11": {
+      "quote_id": "Q-W39-I11",
+      "source_id": "S1",
+      "item": "I-11",
+      "model": "BR-620",
+      "terms": {
+        "available": 999,
+        "price": 52.0,
+        "currency": "CNY",
+        "lead_days": 2,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S1",
+          "feed_source_id": "Q-WEEKLY",
+          "kind": "quote_import",
+          "version_id": "RV_8653483e6e",
+          "payload_hash": "a00d6a860d049a7683774126627e6e49ef5fc8f436e1fb2793a7e20df5d7e166",
+          "run_id": "RUN0033",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": null,
+          "source_updated_raw": null,
+          "adapter": "quote_standard",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quoted_at": "2026-09-19T16:00:00+00:00",
+      "quoted_at_raw": "2026-09-20",
+      "valid_until": null,
+      "provenance": {
+        "source_id": "S1",
+        "feed_source_id": "Q-WEEKLY",
+        "kind": "quote_import",
+        "version_id": "RV_8653483e6e",
+        "payload_hash": "a00d6a860d049a7683774126627e6e49ef5fc8f436e1fb2793a7e20df5d7e166",
+        "run_id": "RUN0033",
+        "fetched_at": "2026-10-20T04:00:00+00:00",
+        "source_updated_at": null,
+        "source_updated_raw": null,
+        "adapter": "quote_standard",
+        "adapter_version": "1.0.0",
+        "url": null
+      }
+    },
+    "Q-W43-I11": {
+      "quote_id": "Q-W43-I11",
+      "source_id": "S1",
+      "item": "I-11",
+      "model": "BR-620",
+      "terms": {
+        "available": 20,
+        "price": 55.0,
+        "currency": "CNY",
+        "lead_days": 7,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S1",
+          "feed_source_id": "Q-WEEKLY",
+          "kind": "quote_import",
+          "version_id": "RV_3ebd7c97af",
+          "payload_hash": "c81a77388cccd060b8c485fb0d19a60b23d0c23c3150cfa24e9b3798d3e0fad2",
+          "run_id": "RUN0033",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": null,
+          "source_updated_raw": null,
+          "adapter": "quote_standard",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quoted_at": "2026-10-15T16:00:00+00:00",
+      "quoted_at_raw": "2026-10-16",
+      "valid_until": null,
+      "provenance": {
+        "source_id": "S1",
+        "feed_source_id": "Q-WEEKLY",
+        "kind": "quote_import",
+        "version_id": "RV_3ebd7c97af",
+        "payload_hash": "c81a77388cccd060b8c485fb0d19a60b23d0c23c3150cfa24e9b3798d3e0fad2",
+        "run_id": "RUN0033",
+        "fetched_at": "2026-10-20T04:00:00+00:00",
+        "source_updated_at": null,
+        "source_updated_raw": null,
+        "adapter": "quote_standard",
+        "adapter_version": "1.0.0",
+        "url": null
+      }
+    },
+    "Q-W43-N45": {
+      "quote_id": "Q-W43-N45",
+      "source_id": "S4",
+      "item": "CT45-N6",
+      "model": "CT-45",
+      "terms": {
+        "available": 12,
+        "price": 1250.0,
+        "currency": "CNY",
+        "lead_days": 10,
+        "min_qty": 1,
+        "provenance": {
+          "source_id": "S4",
+          "feed_source_id": "Q-WEEKLY",
+          "kind": "quote_import",
+          "version_id": "RV_ca242c6b4a",
+          "payload_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+          "run_id": "RUN0033",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": null,
+          "source_updated_raw": null,
+          "adapter": "quote_standard",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      },
+      "quoted_at": "2026-10-15T16:00:00+00:00",
+      "quoted_at_raw": "2026-10-16",
+      "valid_until": null,
+      "provenance": {
+        "source_id": "S4",
+        "feed_source_id": "Q-WEEKLY",
+        "kind": "quote_import",
+        "version_id": "RV_ca242c6b4a",
+        "payload_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+        "run_id": "RUN0033",
+        "fetched_at": "2026-10-20T04:00:00+00:00",
+        "source_updated_at": null,
+        "source_updated_raw": null,
+        "adapter": "quote_standard",
+        "adapter_version": "1.0.0",
+        "url": null
+      }
+    }
+  },
+  "materials": {
+    "MAT-BR620": {
+      "id": "MAT-BR620",
+      "canonical_model": "BR-620",
+      "model_key": "BR620",
+      "manufacturer": "华轴",
+      "category": "bearing",
+      "spec": {
+        "category": "bearing",
+        "manufacturer": null,
+        "model": "BR-620",
+        "model_key": "BR620",
+        "name": null,
+        "dimensions": {},
+        "params": {
+          "load": {
+            "kind": "level",
+            "name": "load",
+            "value": "high",
+            "level": 4,
+            "unit": null,
+            "raw": "high"
+          }
+        }
+      },
+      "codes": [
+        "BR-620",
+        "BR620"
+      ],
+      "governance_status": "pending",
+      "manual_status": null,
+      "authoritative_spec": null,
+      "created_at": "2026-11-24T21:55:28+00:00",
+      "updated_at": "2026-11-24T21:55:29+00:00"
+    },
+    "MAT-CT40": {
+      "id": "MAT-CT40",
+      "canonical_model": "CT-40",
+      "model_key": "CT40",
+      "manufacturer": "智控",
+      "category": "controller",
+      "spec": {
+        "category": "controller",
+        "manufacturer": null,
+        "model": "CT-40",
+        "model_key": "CT40",
+        "name": null,
+        "dimensions": {},
+        "params": {}
+      },
+      "codes": [
+        "CT-40"
+      ],
+      "governance_status": "pending",
+      "manual_status": null,
+      "authoritative_spec": null,
+      "created_at": "2026-11-24T21:55:28+00:00",
+      "updated_at": "2026-11-24T21:55:29+00:00"
+    },
+    "MAT-CT45": {
+      "id": "MAT-CT45",
+      "canonical_model": "CT-45",
+      "model_key": "CT45",
+      "manufacturer": "智控",
+      "category": "controller",
+      "spec": {
+        "category": "controller",
+        "manufacturer": "智控",
+        "model": "CT-45",
+        "model_key": "CT45",
+        "name": "兼容控制器",
+        "dimensions": {},
+        "params": {
+          "control_channels": {
+            "kind": "number",
+            "name": "control_channels",
+            "value": 6.0,
+            "unit": null,
+            "raw": "6"
+          }
+        }
+      },
+      "codes": [
+        "CT-45"
+      ],
+      "governance_status": "pending",
+      "manual_status": null,
+      "authoritative_spec": null,
+      "created_at": "2026-11-24T21:55:28+00:00",
+      "updated_at": "2026-11-24T21:55:29+00:00"
+    }
+  },
+  "assets": {
+    "M1": {
+      "id": "M1",
+      "asset": "M1",
+      "model": "BR-620",
+      "equipment_model": "PUMP-P200",
+      "load": "high",
+      "serial": "AX-101",
+      "spec": {
+        "category": "bearing",
+        "manufacturer": null,
+        "model": "BR-620",
+        "model_key": "BR620",
+        "name": null,
+        "dimensions": {},
+        "params": {
+          "load": {
+            "kind": "level",
+            "name": "load",
+            "value": "high",
+            "level": 4,
+            "unit": null,
+            "raw": "high"
+          }
+        }
+      },
+      "raw": {
+        "asset": "M1",
+        "model": "BR-620",
+        "load": "high",
+        "serial": "AX-101",
+        "equipment_model": "PUMP-P200"
+      }
+    },
+    "M2": {
+      "id": "M2",
+      "asset": "M2",
+      "model": "BR620",
+      "equipment_model": "PUMP-P200",
+      "load": "high",
+      "serial": "AX-102",
+      "spec": {
+        "category": "bearing",
+        "manufacturer": null,
+        "model": "BR620",
+        "model_key": "BR620",
+        "name": null,
+        "dimensions": {},
+        "params": {
+          "load": {
+            "kind": "level",
+            "name": "load",
+            "value": "high",
+            "level": 4,
+            "unit": null,
+            "raw": "high"
+          }
+        }
+      },
+      "raw": {
+        "asset": "M2",
+        "model": "BR620",
+        "load": "high",
+        "serial": "AX-102",
+        "equipment_model": "PUMP-P200"
+      }
+    },
+    "M3": {
+      "id": "M3",
+      "asset": "M3",
+      "model": "CT-40",
+      "equipment_model": "PACKER-300",
+      "load": null,
+      "serial": "CT-880",
+      "spec": {
+        "category": "controller",
+        "manufacturer": null,
+        "model": "CT-40",
+        "model_key": "CT40",
+        "name": null,
+        "dimensions": {},
+        "params": {}
+      },
+      "raw": {
+        "asset": "M3",
+        "model": "CT-40",
+        "serial": "CT-880",
+        "equipment_model": "PACKER-300"
+      }
+    }
+  },
+  "orders": {
+    "PO-31": {
+      "order_id": "PO-31",
+      "asset": "M1",
+      "item": "I-11",
+      "source": null,
+      "due": "2026-11-02",
+      "qty": 1,
+      "state": "confirmed",
+      "snapshot": {
+        "confirmed_at": "2026-11-24T21:55:28+00:00",
+        "confirmed_by": "imported",
+        "imported": true,
+        "header": {
+          "order_id": "PO-31",
+          "asset": "M1",
+          "item": "I-11",
+          "source": null,
+          "due": "2026-11-02",
+          "qty": 1
+        },
+        "verdict_at_confirmation": "releasable",
+        "can_release_at_confirmation": true,
+        "release_kind": "direct",
+        "recommended": {
+          "kind": "direct",
+          "lkey": "S1::I-11",
+          "source_id": "S1",
+          "item": "I-11"
+        },
+        "checksum": "c102824bb0b3c95c5471d02c02e3525573c12670a1607ab73de9e006cf9def8c",
+        "fingerprint": {
+          "order_id": "PO-31",
+          "item": "I-11",
+          "source": null,
+          "due": "2026-11-02",
+          "qty": 1,
+          "recommended": {
+            "kind": "direct",
+            "lkey": "S1::I-11",
+            "source_id": "S1",
+            "item": "I-11"
+          },
+          "release_kind": "direct",
+          "verdict": "releasable"
+        },
+        "fact_version_ids": [
+          "RV_54cb43bafa"
+        ],
+        "announcement_ids_checked": [],
+        "approval_ids_checked": []
+      },
+      "original_decision": {
+        "verdict": "releasable",
+        "recommended": {
+          "kind": "direct",
+          "lkey": "S1::I-11",
+          "source_id": "S1",
+          "item": "I-11"
+        },
+        "release_kind": "direct",
+        "at": "2026-11-24T21:55:28+00:00",
+        "by": "imported"
+      },
+      "last_check": null,
+      "current_risks": [
+        {
+          "code": "delivery_date_superseded",
+          "severity": "blocker",
+          "new_announcement": true,
+          "announcement_id": "A-LEAD-BR620",
+          "message": "新公告 A-LEAD-BR620 改变了交期/停产安排，可能覆盖订单要求的交付日期 2026-11-02",
+          "suggested_action": "采购员凭所附证据复核：催交、改期或切换已批准替代；原订单不被系统自动改写。",
+          "evidence": [
+            {
+              "kind": "announcement",
+              "announcement_id": "A-LEAD-BR620",
+              "notice_kind": "lead_time",
+              "source_id": "MFR-WEB",
+              "version_id": "RV_38d7a6d1c7",
+              "payload_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+              "fetched_at": "2026-10-20T04:00:00+00:00",
+              "effective_date": "2026-10-18",
+              "title": "BR-620 交付周期延长至 45 天",
+              "url": "https://announce.example-mfr.local/br620-lead"
+            },
+            {
+              "kind": "source_record",
+              "source_id": "S1",
+              "item": "I-11",
+              "model": "BR-620",
+              "version_id": "RV_54cb43bafa",
+              "payload_hash": "075ed7b02d30192b3698e8bc0939bdf8461882cf6303f40cc5c3d4ff6ce917b2",
+              "fetched_at": "2026-10-20T04:00:00+00:00",
+              "source_updated_at": "2026-10-14T01:00:00+00:00",
+              "adapter": "sample_catalog",
+              "url": null
+            }
+          ],
+          "dates": {
+            "due": "2026-11-02",
+            "projected_arrival": "2026-12-04",
+            "announcement_effective_date": "2026-10-18",
+            "earliest_delivery_date": null
+          }
+        }
+      ],
+      "header_history": [],
+      "imported_at": "2026-11-24T21:55:28+00:00",
+      "current_assessment": {
+        "as_of": "2026-10-20",
+        "verdict": "blocked",
+        "can_release": false,
+        "scanned_at": "2026-11-24T21:55:29+00:00"
+      }
+    },
+    "PO-32": {
+      "order_id": "PO-32",
+      "asset": "M2",
+      "item": "X-8",
+      "source": null,
+      "due": "2026-11-08",
+      "qty": 1,
+      "state": "draft",
+      "snapshot": null,
+      "original_decision": null,
+      "last_check": {
+        "order_id": "PO-32",
+        "as_of": "2026-10-20",
+        "state": "draft",
+        "asset": {
+          "id": "M2",
+          "model": "BR620",
+          "equipment_model": "PUMP-P200",
+          "load": "high",
+          "serial": "AX-102"
+        },
+        "due": "2026-11-08",
+        "qty": 1,
+        "candidate_options": [
+          {
+            "kind": "direct",
+            "lkey": "S2::X-8",
+            "source_id": "S2",
+            "item": "X-8",
+            "model": "BR620",
+            "mapping_status": "pending",
+            "fit_status": "pending",
+            "fit_reasons": [
+              {
+                "code": "parameter_conflict",
+                "attribute": "load",
+                "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换"
+              }
+            ],
+            "commercial": {
+              "available": 6,
+              "price": null,
+              "currency": "CNY",
+              "lead_days": null,
+              "lead_days_values": [],
+              "latest_quote": null
+            },
+            "terms_history": [
+              {
+                "via": "catalog",
+                "available": 6,
+                "price": null,
+                "lead_days": null,
+                "provenance": {
+                  "source_id": "S2",
+                  "feed_source_id": "S2",
+                  "kind": "catalog",
+                  "version_id": "RV_34cc63b2cb",
+                  "payload_hash": "441a853546c1984c2b308355c3305808b6bc52d6228b380e32edb651d9348cf5",
+                  "run_id": "RUN0029",
+                  "fetched_at": "2026-10-20T04:00:00+00:00",
+                  "source_updated_at": "2026-10-14T02:30:00+00:00",
+                  "source_updated_raw": "2026-10-14T10:30+08:00",
+                  "adapter": "sample_catalog",
+                  "adapter_version": "1.0.0",
+                  "url": null
+                }
+              }
+            ],
+            "effective_lead_days": 45,
+            "projected_arrival": "2026-12-04",
+            "due": "2026-11-08",
+            "announcement_ids": [
+              "A-LEAD-BR620"
+            ],
+            "blockers": [
+              {
+                "code": "parameter_conflict",
+                "severity": "blocker",
+                "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换",
+                "suggested_action": "冻结该候选，转物料治理人员裁定；或选择参数匹配/已批准替代的来源。",
+                "attribute": "load"
+              },
+              {
+                "code": "lead_time_exceeds_due",
+                "severity": "blocker",
+                "message": "预计到货 2026-12-04 晚于需求日期 2026-11-08（交期 45 天）",
+                "suggested_action": "催交/空运、更换现货来源，或与需求部门确认调整交付日期。",
+                "arrival": "2026-12-04",
+                "due": "2026-11-08",
+                "lead_days": 45
+              }
+            ],
+            "holds": [],
+            "warnings": [],
+            "evidence": [
+              {
+                "kind": "source_record",
+                "source_id": "S2",
+                "item": "X-8",
+                "model": "BR620",
+                "version_id": "RV_34cc63b2cb",
+                "payload_hash": "441a853546c1984c2b308355c3305808b6bc52d6228b380e32edb651d9348cf5",
+                "fetched_at": "2026-10-20T04:00:00+00:00",
+                "source_updated_at": "2026-10-14T02:30:00+00:00",
+                "adapter": "sample_catalog",
+                "url": null
+              },
+              {
+                "kind": "asset",
+                "asset_id": "M2",
+                "model": "BR620",
+                "equipment_model": "PUMP-P200",
+                "serial": "AX-102"
+              },
+              {
+                "kind": "announcement",
+                "announcement_id": "A-LEAD-BR620",
+                "notice_kind": "lead_time",
+                "source_id": "MFR-WEB",
+                "version_id": "RV_38d7a6d1c7",
+                "payload_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+                "fetched_at": "2026-10-20T04:00:00+00:00",
+                "effective_date": "2026-10-18",
+                "title": "BR-620 交付周期延长至 45 天",
+                "url": "https://announce.example-mfr.local/br620-lead"
+              }
+            ],
+            "releasable": false,
+            "verdict": "blocked",
+            "score": [
+              0,
+              1,
+              -1000000000000
+            ]
+          }
+        ],
+        "substitution_options": [],
+        "same_material_alternatives": [],
+        "recommended": null,
+        "release_kind": null,
+        "can_release": false,
+        "verdict": "blocked",
+        "blockers": [
+          {
+            "code": "parameter_conflict",
+            "severity": "blocker",
+            "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换",
+            "suggested_action": "冻结该候选，转物料治理人员裁定；或选择参数匹配/已批准替代的来源。",
+            "attribute": "load"
+          },
+          {
+            "code": "lead_time_exceeds_due",
+            "severity": "blocker",
+            "message": "预计到货 2026-12-04 晚于需求日期 2026-11-08（交期 45 天）",
+            "suggested_action": "催交/空运、更换现货来源，或与需求部门确认调整交付日期。",
+            "arrival": "2026-12-04",
+            "due": "2026-11-08",
+            "lead_days": 45
+          }
+        ],
+        "holds": [],
+        "evidence": [
+          {
+            "kind": "source_record",
+            "source_id": "S2",
+            "item": "X-8",
+            "model": "BR620",
+            "version_id": "RV_34cc63b2cb",
+            "payload_hash": "441a853546c1984c2b308355c3305808b6bc52d6228b380e32edb651d9348cf5",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "source_updated_at": "2026-10-14T02:30:00+00:00",
+            "adapter": "sample_catalog",
+            "url": null
+          },
+          {
+            "kind": "asset",
+            "asset_id": "M2",
+            "model": "BR620",
+            "equipment_model": "PUMP-P200",
+            "serial": "AX-102"
+          },
+          {
+            "kind": "announcement",
+            "announcement_id": "A-LEAD-BR620",
+            "notice_kind": "lead_time",
+            "source_id": "MFR-WEB",
+            "version_id": "RV_38d7a6d1c7",
+            "payload_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "effective_date": "2026-10-18",
+            "title": "BR-620 交付周期延长至 45 天",
+            "url": "https://announce.example-mfr.local/br620-lead"
+          }
+        ],
+        "checked_at": "2026-11-24T21:55:29+00:00",
+        "decision_signature": "{\"codes\": [\"lead_time_exceeds_due\", \"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}"
+      },
+      "current_risks": [],
+      "header_history": [],
+      "imported_at": "2026-11-24T21:55:28+00:00"
+    },
+    "PO-33": {
+      "order_id": "PO-33",
+      "asset": "M3",
+      "item": "I-12",
+      "source": null,
+      "due": "2026-11-09",
+      "qty": 1,
+      "state": "draft",
+      "snapshot": null,
+      "original_decision": null,
+      "last_check": {
+        "order_id": "PO-33",
+        "as_of": "2026-10-20",
+        "state": "draft",
+        "asset": {
+          "id": "M3",
+          "model": "CT-40",
+          "equipment_model": "PACKER-300",
+          "load": null,
+          "serial": "CT-880"
+        },
+        "due": "2026-11-09",
+        "qty": 1,
+        "candidate_options": [
+          {
+            "kind": "direct",
+            "lkey": "S1::I-12",
+            "source_id": "S1",
+            "item": "I-12",
+            "model": "CT-40",
+            "mapping_status": "pending",
+            "fit_status": "pending",
+            "fit_reasons": [
+              {
+                "code": "insufficient_identity_evidence",
+                "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足"
+              }
+            ],
+            "commercial": {
+              "available": 0,
+              "price": null,
+              "currency": "CNY",
+              "lead_days": null,
+              "lead_days_values": [],
+              "latest_quote": null
+            },
+            "terms_history": [
+              {
+                "via": "catalog",
+                "available": 0,
+                "price": null,
+                "lead_days": null,
+                "provenance": {
+                  "source_id": "S1",
+                  "feed_source_id": "S2",
+                  "kind": "catalog",
+                  "version_id": "RV_817e702640",
+                  "payload_hash": "356c5a07decbe983de4a75c36ad0b331117f87771da55e5c220e4953253f4e35",
+                  "run_id": "RUN0029",
+                  "fetched_at": "2026-10-20T04:00:00+00:00",
+                  "source_updated_at": "2026-10-13T08:00:00+00:00",
+                  "source_updated_raw": "2026-10-13T16:00+08:00",
+                  "adapter": "sample_catalog",
+                  "adapter_version": "1.0.0",
+                  "url": null
+                }
+              }
+            ],
+            "effective_lead_days": null,
+            "projected_arrival": null,
+            "due": "2026-11-09",
+            "announcement_ids": [
+              "A-EOL-CT40",
+              "A-XREF-CT45"
+            ],
+            "blockers": [
+              {
+                "code": "out_of_stock",
+                "severity": "blocker",
+                "message": "该来源当前可用量为 0",
+                "suggested_action": "寻找同物料其他经销商现货，或走已批准替代/补货流程。"
+              },
+              {
+                "code": "discontinued_effective",
+                "severity": "blocker",
+                "message": "厂商已于 2026-10-10 起停产该型号（公告 A-EOL-CT40）",
+                "suggested_action": "停止新采购；按公告选择经批准的替代件，或消化最后库存。",
+                "effective_date": "2026-10-10",
+                "announcement_id": "A-EOL-CT40"
+              }
+            ],
+            "holds": [
+              {
+                "code": "insufficient_identity_evidence",
+                "severity": "hold",
+                "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足",
+                "suggested_action": "至少取得一项匹配的尺寸或额定参数，或由治理人员凭权威资料确认。",
+                "attribute": null
+              }
+            ],
+            "warnings": [],
+            "evidence": [
+              {
+                "kind": "source_record",
+                "source_id": "S1",
+                "item": "I-12",
+                "model": "CT-40",
+                "version_id": "RV_817e702640",
+                "payload_hash": "356c5a07decbe983de4a75c36ad0b331117f87771da55e5c220e4953253f4e35",
+                "fetched_at": "2026-10-20T04:00:00+00:00",
+                "source_updated_at": "2026-10-13T08:00:00+00:00",
+                "adapter": "sample_catalog",
+                "url": null
+              },
+              {
+                "kind": "asset",
+                "asset_id": "M3",
+                "model": "CT-40",
+                "equipment_model": "PACKER-300",
+                "serial": "CT-880"
+              },
+              {
+                "kind": "announcement",
+                "announcement_id": "A-EOL-CT40",
+                "notice_kind": "discontinuation",
+                "source_id": "MFR-ANN",
+                "version_id": "RV_a0af1994de",
+                "payload_hash": "39d04e355c8d01d1ec6a5066ffb5c020c51e3f0382e4814a3df2ea551f12bbc2",
+                "fetched_at": "2026-10-20T04:00:00+00:00",
+                "effective_date": "2026-10-10",
+                "title": "CT-40 控制器停产通知",
+                "url": "https://announce.example-mfr.local/ct40-eol"
+              },
+              {
+                "kind": "announcement",
+                "announcement_id": "A-XREF-CT45",
+                "notice_kind": "replacement",
+                "source_id": "MFR-ANN",
+                "version_id": "RV_f0c56d673c",
+                "payload_hash": "d6238ccae43764890c5aeec94aeace44422f4b40ac81d4fa253e6e389c3b2af2",
+                "fetched_at": "2026-10-20T04:00:00+00:00",
+                "effective_date": "2026-10-09",
+                "title": "CT-40 到 CT-45 兼容替代索引",
+                "url": "https://announce.example-mfr.local/ct40-ct45-xref"
+              }
+            ],
+            "releasable": false,
+            "verdict": "blocked",
+            "score": [
+              1,
+              0,
+              -1000000000000
+            ]
+          }
+        ],
+        "substitution_options": [
+          {
+            "kind": "approved_substitution",
+            "approval_id": "AP-CT40-CT45",
+            "approval_scope": {
+              "equipment": {
+                "approved": true,
+                "context": [
+                  "CT-40",
+                  "M3",
+                  "PACKER-300"
+                ],
+                "equipment_models": [
+                  "PACKER-300"
+                ],
+                "asset_ids": [],
+                "matched": "PACKER-300"
+              },
+              "parameters": {
+                "approved": true,
+                "checks": [
+                  {
+                    "parameter": "control_channels",
+                    "side": "candidate",
+                    "covered": true,
+                    "range": [
+                      4,
+                      8
+                    ]
+                  }
+                ],
+                "ranges": {
+                  "control_channels": [
+                    4,
+                    8
+                  ]
+                }
+              },
+              "both_approved": true
+            },
+            "lkey": "S4::CT45-N6",
+            "source_id": "S4",
+            "item": "CT45-N6",
+            "model": "CT-45",
+            "commercial": {
+              "available": 12,
+              "price": 1280.0,
+              "currency": "CNY",
+              "lead_days": 10,
+              "lead_days_values": [
+                10,
+                10
+              ],
+              "latest_quote": {
+                "quote_id": "Q-W43-N45",
+                "source_id": "S4",
+                "item": "CT45-N6",
+                "model": "CT-45",
+                "terms": {
+                  "available": 12,
+                  "price": 1250.0,
+                  "currency": "CNY",
+                  "lead_days": 10,
+                  "min_qty": 1,
+                  "provenance": {
+                    "source_id": "S4",
+                    "feed_source_id": "Q-WEEKLY",
+                    "kind": "quote_import",
+                    "version_id": "RV_ca242c6b4a",
+                    "payload_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+                    "run_id": "RUN0033",
+                    "fetched_at": "2026-10-20T04:00:00+00:00",
+                    "source_updated_at": null,
+                    "source_updated_raw": null,
+                    "adapter": "quote_standard",
+                    "adapter_version": "1.0.0",
+                    "url": null
+                  }
+                },
+                "quoted_at": "2026-10-15T16:00:00+00:00",
+                "quoted_at_raw": "2026-10-16",
+                "valid_until": null,
+                "provenance": {
+                  "source_id": "S4",
+                  "feed_source_id": "Q-WEEKLY",
+                  "kind": "quote_import",
+                  "version_id": "RV_ca242c6b4a",
+                  "payload_hash": "098562fe4223a2088a527ef087d236992a2e461aad876f07fa70132f6eb0eba3",
+                  "run_id": "RUN0033",
+                  "fetched_at": "2026-10-20T04:00:00+00:00",
+                  "source_updated_at": null,
+                  "source_updated_raw": null,
+                  "adapter": "quote_standard",
+                  "adapter_version": "1.0.0",
+                  "url": null
+                }
+              }
+            },
+            "effective_lead_days": 10,
+            "projected_arrival": "2026-10-30",
+            "announcement_ids": [],
+            "blockers": [],
+            "holds": [],
+            "warnings": [],
+            "evidence": [
+              {
+                "kind": "source_record",
+                "source_id": "S4",
+                "item": "CT45-N6",
+                "model": "CT-45",
+                "version_id": "RV_14f9364b06",
+                "payload_hash": "e9a6bf41f5799d2f5f501bc03d6cfc7d2f928f3ebc3b6e9096886c28f7d6a346",
+                "fetched_at": "2026-10-20T04:00:00+00:00",
+                "source_updated_at": "2026-10-15T03:20:00+00:00",
+                "adapter": "dealer_wide",
+                "url": null
+              },
+              {
+                "kind": "asset",
+                "asset_id": "M3",
+                "model": "CT-40",
+                "equipment_model": "PACKER-300",
+                "serial": "CT-880"
+              },
+              {
+                "kind": "approval",
+                "approval_id": "AP-CT40-CT45",
+                "equipment_models": [
+                  "PACKER-300"
+                ],
+                "parameter_ranges": {
+                  "control_channels": [
+                    4,
+                    8
+                  ]
+                },
+                "status": "active"
+              }
+            ],
+            "releasable": true,
+            "verdict": "releasable",
+            "score": [
+              1,
+              1,
+              -1280.0
+            ]
+          }
+        ],
+        "same_material_alternatives": [],
+        "recommended": {
+          "kind": "approved_substitution",
+          "approval_id": "AP-CT40-CT45",
+          "lkey": "S4::CT45-N6",
+          "source_id": "S4",
+          "item": "CT45-N6"
+        },
+        "release_kind": "approved_substitution",
+        "can_release": true,
+        "verdict": "releasable",
+        "blockers": [],
+        "holds": [],
+        "evidence": [
+          {
+            "kind": "source_record",
+            "source_id": "S1",
+            "item": "I-12",
+            "model": "CT-40",
+            "version_id": "RV_817e702640",
+            "payload_hash": "356c5a07decbe983de4a75c36ad0b331117f87771da55e5c220e4953253f4e35",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "source_updated_at": "2026-10-13T08:00:00+00:00",
+            "adapter": "sample_catalog",
+            "url": null
+          },
+          {
+            "kind": "asset",
+            "asset_id": "M3",
+            "model": "CT-40",
+            "equipment_model": "PACKER-300",
+            "serial": "CT-880"
+          },
+          {
+            "kind": "announcement",
+            "announcement_id": "A-EOL-CT40",
+            "notice_kind": "discontinuation",
+            "source_id": "MFR-ANN",
+            "version_id": "RV_a0af1994de",
+            "payload_hash": "39d04e355c8d01d1ec6a5066ffb5c020c51e3f0382e4814a3df2ea551f12bbc2",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "effective_date": "2026-10-10",
+            "title": "CT-40 控制器停产通知",
+            "url": "https://announce.example-mfr.local/ct40-eol"
+          },
+          {
+            "kind": "announcement",
+            "announcement_id": "A-XREF-CT45",
+            "notice_kind": "replacement",
+            "source_id": "MFR-ANN",
+            "version_id": "RV_f0c56d673c",
+            "payload_hash": "d6238ccae43764890c5aeec94aeace44422f4b40ac81d4fa253e6e389c3b2af2",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "effective_date": "2026-10-09",
+            "title": "CT-40 到 CT-45 兼容替代索引",
+            "url": "https://announce.example-mfr.local/ct40-ct45-xref"
+          },
+          {
+            "kind": "source_record",
+            "source_id": "S4",
+            "item": "CT45-N6",
+            "model": "CT-45",
+            "version_id": "RV_14f9364b06",
+            "payload_hash": "e9a6bf41f5799d2f5f501bc03d6cfc7d2f928f3ebc3b6e9096886c28f7d6a346",
+            "fetched_at": "2026-10-20T04:00:00+00:00",
+            "source_updated_at": "2026-10-15T03:20:00+00:00",
+            "adapter": "dealer_wide",
+            "url": null
+          },
+          {
+            "kind": "approval",
+            "approval_id": "AP-CT40-CT45",
+            "equipment_models": [
+              "PACKER-300"
+            ],
+            "parameter_ranges": {
+              "control_channels": [
+                4,
+                8
+              ]
+            },
+            "status": "active"
+          }
+        ],
+        "checked_at": "2026-11-24T21:55:29+00:00",
+        "decision_signature": "{\"codes\": [], \"rec\": \"S4::CT45-N6\", \"v\": \"releasable\"}"
+      },
+      "current_risks": [],
+      "header_history": [],
+      "imported_at": "2026-11-24T21:55:28+00:00"
+    }
+  },
+  "announcements": {
+    "A-EOL-CT40": {
+      "id": "A-EOL-CT40",
+      "status": "active",
+      "withdrawn_at": null,
+      "withdraw_reason": null,
+      "created_at": "2026-11-24T21:55:28+00:00",
+      "revision": 1,
+      "source_id": "MFR-ANN",
+      "external_id": "A-EOL-CT40",
+      "manufacturer": "智控",
+      "model": "CT-40",
+      "model_key": "CT40",
+      "kind": "discontinuation",
+      "title": "CT-40 控制器停产通知",
+      "body": "CT-40 自 2026-10-10 起停止生产，建议迁移到 CT-45；CT-45 对 PACKER 系列的兼容性以设备型号与参数范围审批为准。",
+      "url": "https://announce.example-mfr.local/ct40-eol",
+      "published_at": "2026-10-08T02:00:00+00:00",
+      "published_date": "2026-10-08",
+      "effective_at": "2026-10-09T16:00:00+00:00",
+      "effective_date": "2026-10-10",
+      "last_order_date": "2026-12-15",
+      "replacement_model": "CT-45",
+      "replacement_model_key": "CT45",
+      "lead_days": null,
+      "earliest_delivery_date": null,
+      "equipment_models_hint": [],
+      "parameter_ranges_hint": null,
+      "provenance": {
+        "source_id": "MFR-ANN",
+        "feed_source_id": "MFR-ANN",
+        "version_id": "RV_a0af1994de",
+        "payload_hash": "39d04e355c8d01d1ec6a5066ffb5c020c51e3f0382e4814a3df2ea551f12bbc2",
+        "run_id": "RUN0035",
+        "fetched_at": "2026-10-20T04:00:00+00:00",
+        "published_at": "2026-10-08T02:00:00+00:00",
+        "adapter": "generic",
+        "adapter_version": "1.0.0",
+        "url": "https://announce.example-mfr.local/ct40-eol"
+      },
+      "raw_version_id": "RV_a0af1994de",
+      "updated_at": "2026-11-24T21:55:29+00:00"
+    },
+    "A-XREF-CT45": {
+      "id": "A-XREF-CT45",
+      "status": "active",
+      "withdrawn_at": null,
+      "withdraw_reason": null,
+      "created_at": "2026-11-24T21:55:28+00:00",
+      "revision": 1,
+      "source_id": "MFR-ANN",
+      "external_id": "A-XREF-CT45",
+      "manufacturer": "智控",
+      "model": "CT-40",
+      "model_key": "CT40",
+      "kind": "replacement",
+      "title": "CT-40 到 CT-45 兼容替代索引",
+      "body": "厂商交叉索引列出 CT-45 可用于部分 PACKER 设备；这只是线索，不构成我司替代放行。",
+      "url": "https://announce.example-mfr.local/ct40-ct45-xref",
+      "published_at": "2026-10-09T07:30:00+00:00",
+      "published_date": "2026-10-09",
+      "effective_at": "2026-10-08T16:00:00+00:00",
+      "effective_date": "2026-10-09",
+      "last_order_date": null,
+      "replacement_model": "CT-45",
+      "replacement_model_key": "CT45",
+      "lead_days": null,
+      "earliest_delivery_date": null,
+      "equipment_models_hint": [
+        "PACKER-300"
+      ],
+      "parameter_ranges_hint": null,
+      "provenance": {
+        "source_id": "MFR-ANN",
+        "feed_source_id": "MFR-ANN",
+        "version_id": "RV_f0c56d673c",
+        "payload_hash": "d6238ccae43764890c5aeec94aeace44422f4b40ac81d4fa253e6e389c3b2af2",
+        "run_id": "RUN0035",
+        "fetched_at": "2026-10-20T04:00:00+00:00",
+        "published_at": "2026-10-09T07:30:00+00:00",
+        "adapter": "generic",
+        "adapter_version": "1.0.0",
+        "url": "https://announce.example-mfr.local/ct40-ct45-xref"
+      },
+      "raw_version_id": "RV_f0c56d673c",
+      "updated_at": "2026-11-24T21:55:29+00:00"
+    },
+    "A-LEAD-BR620": {
+      "id": "A-LEAD-BR620",
+      "status": "active",
+      "withdrawn_at": null,
+      "withdraw_reason": null,
+      "created_at": "2026-11-24T21:55:29+00:00",
+      "revision": 1,
+      "source_id": "MFR-WEB",
+      "external_id": "A-LEAD-BR620",
+      "manufacturer": "华轴",
+      "model": "BR-620",
+      "model_key": "BR620",
+      "kind": "lead_time",
+      "title": "BR-620 交付周期延长至 45 天",
+      "body": null,
+      "url": "https://announce.example-mfr.local/br620-lead",
+      "published_at": "2026-10-17T16:00:00+00:00",
+      "published_date": "2026-10-18",
+      "effective_at": "2026-10-17T16:00:00+00:00",
+      "effective_date": "2026-10-18",
+      "last_order_date": null,
+      "replacement_model": null,
+      "replacement_model_key": null,
+      "lead_days": 45,
+      "earliest_delivery_date": null,
+      "equipment_models_hint": [],
+      "parameter_ranges_hint": null,
+      "provenance": {
+        "source_id": "MFR-WEB",
+        "feed_source_id": "MFR-WEB",
+        "version_id": "RV_38d7a6d1c7",
+        "payload_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+        "run_id": "RUN0037",
+        "fetched_at": "2026-10-20T04:00:00+00:00",
+        "published_at": "2026-10-17T16:00:00+00:00",
+        "adapter": "generic",
+        "adapter_version": "1.0.0",
+        "url": "https://announce.example-mfr.local/br620-lead"
+      },
+      "raw_version_id": "RV_38d7a6d1c7",
+      "updated_at": "2026-11-24T21:55:29+00:00"
+    }
+  },
+  "approvals": {
+    "AP-CT40-CT45": {
+      "id": "AP-CT40-CT45",
+      "from_model": "CT-40",
+      "to_model": "CT-45",
+      "from_model_key": "CT40",
+      "to_model_key": "CT45",
+      "from_material_id": "MAT-CT40",
+      "to_material_id": "MAT-CT45",
+      "equipment_models": [
+        "PACKER-300"
+      ],
+      "asset_ids": [],
+      "parameter_ranges": {
+        "control_channels": [
+          4,
+          8
+        ]
+      },
+      "valid_from": null,
+      "valid_to": null,
+      "status": "active",
+      "note": "仅批准 PACKER-300 且控制通道数 4-8 的有条件替代；其他设备/参数不得放行。",
+      "created_by": "governance-wang",
+      "created_at": "2026-11-24T21:55:28+00:00"
+    }
+  },
+  "review_items": {
+    "REV_167c24b4e85c": {
+      "id": "REV_167c24b4e85c",
+      "status": "open",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": null,
+      "resolution_note": null,
+      "seen_count": 8,
+      "subject_type": "material",
+      "subject_id": "MAT-BR620",
+      "material_id": "MAT-BR620",
+      "listing_key": "S2::X-8",
+      "order_id": null,
+      "kind": "material_verification",
+      "code": "parameter_conflict",
+      "severity": "warning",
+      "blocks_release": true,
+      "title": "物料映射待核",
+      "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换",
+      "suggested_action": null,
+      "attribute": "load",
+      "evidence": [
+        {
+          "kind": "catalog",
+          "source_id": "S2",
+          "item": "X-8",
+          "model": "BR620",
+          "feed_source_id": "S2",
+          "version_id": "RV_34cc63b2cb",
+          "payload_hash": "441a853546c1984c2b308355c3305808b6bc52d6228b380e32edb651d9348cf5",
+          "run_id": "RUN0029",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-14T02:30:00+00:00",
+          "source_updated_raw": "2026-10-14T10:30+08:00",
+          "adapter": "sample_catalog",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      ],
+      "review_id": "REV_167c24b4e85c"
+    },
+    "REV_a308428f5441": {
+      "id": "REV_a308428f5441",
+      "status": "open",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": null,
+      "resolution_note": null,
+      "seen_count": 8,
+      "subject_type": "material",
+      "subject_id": "MAT-CT40",
+      "material_id": "MAT-CT40",
+      "listing_key": "S1::I-12",
+      "order_id": null,
+      "kind": "material_verification",
+      "code": "insufficient_identity_evidence",
+      "severity": "warning",
+      "blocks_release": true,
+      "title": "物料映射待核",
+      "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足",
+      "suggested_action": null,
+      "attribute": null,
+      "evidence": [
+        {
+          "kind": "catalog",
+          "source_id": "S1",
+          "item": "I-12",
+          "model": "CT-40",
+          "feed_source_id": "S2",
+          "version_id": "RV_817e702640",
+          "payload_hash": "356c5a07decbe983de4a75c36ad0b331117f87771da55e5c220e4953253f4e35",
+          "run_id": "RUN0029",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-13T08:00:00+00:00",
+          "source_updated_raw": "2026-10-13T16:00+08:00",
+          "adapter": "sample_catalog",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      ],
+      "review_id": "REV_a308428f5441"
+    },
+    "REV_642f2227b90b": {
+      "id": "REV_642f2227b90b",
+      "status": "open",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": null,
+      "resolution_note": null,
+      "seen_count": 7,
+      "subject_type": "order",
+      "subject_id": "PO-32",
+      "order_id": "PO-32",
+      "material_id": null,
+      "kind": "pre_purchase_check",
+      "code": "parameter_conflict",
+      "severity": "blocker",
+      "blocks_release": true,
+      "title": "采购前核对未通过",
+      "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换",
+      "suggested_action": "冻结该候选，转物料治理人员裁定；或选择参数匹配/已批准替代的来源。",
+      "evidence": [],
+      "review_id": "REV_642f2227b90b"
+    },
+    "REV_464535070152": {
+      "id": "REV_464535070152",
+      "status": "resolved",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": "2026-10-20T04:00:00+00:00",
+      "resolution_note": "触发条件已消失（物料映射更正、公告撤回或重新计算），系统自动解决；记录保留可追溯。",
+      "seen_count": 3,
+      "subject_type": "order",
+      "subject_id": "PO-33",
+      "order_id": "PO-33",
+      "material_id": null,
+      "kind": "pre_purchase_check",
+      "code": "out_of_stock",
+      "severity": "blocker",
+      "blocks_release": true,
+      "title": "采购前核对未通过",
+      "message": "该来源当前可用量为 0",
+      "suggested_action": "寻找同物料其他经销商现货，或走已批准替代/补货流程。",
+      "evidence": [],
+      "review_id": "REV_464535070152"
+    },
+    "REV_8626f0edbd45": {
+      "id": "REV_8626f0edbd45",
+      "status": "resolved",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": "2026-10-20T04:00:00+00:00",
+      "resolution_note": "触发条件已消失（物料映射更正、公告撤回或重新计算），系统自动解决；记录保留可追溯。",
+      "seen_count": 3,
+      "subject_type": "order",
+      "subject_id": "PO-33",
+      "order_id": "PO-33",
+      "material_id": null,
+      "kind": "pre_purchase_check",
+      "code": "insufficient_identity_evidence",
+      "severity": "warning",
+      "blocks_release": true,
+      "title": "采购前核对未通过",
+      "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足",
+      "suggested_action": "至少取得一项匹配的尺寸或额定参数，或由治理人员凭权威资料确认。",
+      "evidence": [],
+      "review_id": "REV_8626f0edbd45"
+    },
+    "REV_be1caed38b21": {
+      "id": "REV_be1caed38b21",
+      "status": "open",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": null,
+      "resolution_note": null,
+      "seen_count": 4,
+      "subject_type": "material",
+      "subject_id": "MAT-CT45",
+      "material_id": "MAT-CT45",
+      "listing_key": "S4::CT45-N6",
+      "order_id": null,
+      "kind": "material_verification",
+      "code": "missing_attribute",
+      "severity": "warning",
+      "blocks_release": true,
+      "title": "物料映射待核",
+      "message": "缺少可比对的参数 control_channels，信息不足",
+      "suggested_action": null,
+      "attribute": "control_channels",
+      "evidence": [
+        {
+          "kind": "catalog",
+          "source_id": "S4",
+          "item": "CT45-N6",
+          "model": "CT-45",
+          "feed_source_id": "S3S4-FEED",
+          "version_id": "RV_14f9364b06",
+          "payload_hash": "e9a6bf41f5799d2f5f501bc03d6cfc7d2f928f3ebc3b6e9096886c28f7d6a346",
+          "run_id": "RUN0031",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-15T03:20:00+00:00",
+          "source_updated_raw": "2026-10-15T11:20+08:00",
+          "adapter": "dealer_wide",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      ],
+      "review_id": "REV_be1caed38b21"
+    },
+    "REV_a5b803598716": {
+      "id": "REV_a5b803598716",
+      "status": "open",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": null,
+      "resolution_note": null,
+      "seen_count": 4,
+      "subject_type": "material",
+      "subject_id": "MAT-CT45",
+      "material_id": "MAT-CT45",
+      "listing_key": "S4::CT45-N6",
+      "order_id": null,
+      "kind": "material_verification",
+      "code": "insufficient_identity_evidence",
+      "severity": "warning",
+      "blocks_release": true,
+      "title": "物料映射待核",
+      "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足",
+      "suggested_action": null,
+      "attribute": null,
+      "evidence": [
+        {
+          "kind": "catalog",
+          "source_id": "S4",
+          "item": "CT45-N6",
+          "model": "CT-45",
+          "feed_source_id": "S3S4-FEED",
+          "version_id": "RV_14f9364b06",
+          "payload_hash": "e9a6bf41f5799d2f5f501bc03d6cfc7d2f928f3ebc3b6e9096886c28f7d6a346",
+          "run_id": "RUN0031",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-15T03:20:00+00:00",
+          "source_updated_raw": "2026-10-15T11:20+08:00",
+          "adapter": "dealer_wide",
+          "adapter_version": "1.0.0",
+          "url": null
+        }
+      ],
+      "review_id": "REV_a5b803598716"
+    },
+    "REV_023a8aaccf83": {
+      "id": "REV_023a8aaccf83",
+      "status": "open",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": null,
+      "resolution_note": null,
+      "seen_count": 3,
+      "subject_type": "order",
+      "subject_id": "PO-31",
+      "order_id": "PO-31",
+      "material_id": null,
+      "kind": "confirmed_order_risk",
+      "code": "delivery_date_superseded",
+      "severity": "blocker",
+      "blocks_release": false,
+      "new_announcement": true,
+      "title": "已确认订单风险 / 复核",
+      "message": "新公告 A-LEAD-BR620 改变了交期/停产安排，可能覆盖订单要求的交付日期 2026-11-02",
+      "suggested_action": "采购员凭所附证据复核：催交、改期或切换已批准替代；原订单不被系统自动改写。",
+      "evidence": [
+        {
+          "kind": "announcement",
+          "announcement_id": "A-LEAD-BR620",
+          "notice_kind": "lead_time",
+          "source_id": "MFR-WEB",
+          "version_id": "RV_38d7a6d1c7",
+          "payload_hash": "397917b44f5a4f3e88ac40c6c42d2ea26a026307660cf9b2c3e16d9fb42520e1",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "effective_date": "2026-10-18",
+          "title": "BR-620 交付周期延长至 45 天",
+          "url": "https://announce.example-mfr.local/br620-lead"
+        },
+        {
+          "kind": "source_record",
+          "source_id": "S1",
+          "item": "I-11",
+          "model": "BR-620",
+          "version_id": "RV_54cb43bafa",
+          "payload_hash": "075ed7b02d30192b3698e8bc0939bdf8461882cf6303f40cc5c3d4ff6ce917b2",
+          "fetched_at": "2026-10-20T04:00:00+00:00",
+          "source_updated_at": "2026-10-14T01:00:00+00:00",
+          "adapter": "sample_catalog",
+          "url": null
+        }
+      ],
+      "dates": {
+        "due": "2026-11-02",
+        "projected_arrival": "2026-12-04",
+        "announcement_effective_date": "2026-10-18",
+        "earliest_delivery_date": null
+      },
+      "review_id": "REV_023a8aaccf83"
+    },
+    "REV_4733130ee60a": {
+      "id": "REV_4733130ee60a",
+      "status": "open",
+      "auto": true,
+      "created_at": "2026-10-20T04:00:00+00:00",
+      "updated_at": "2026-10-20T04:00:00+00:00",
+      "resolved_at": null,
+      "resolution_note": null,
+      "seen_count": 3,
+      "subject_type": "order",
+      "subject_id": "PO-32",
+      "order_id": "PO-32",
+      "material_id": null,
+      "kind": "pre_purchase_check",
+      "code": "lead_time_exceeds_due",
+      "severity": "blocker",
+      "blocks_release": true,
+      "title": "采购前核对未通过",
+      "message": "预计到货 2026-12-04 晚于需求日期 2026-11-08（交期 45 天）",
+      "suggested_action": "催交/空运、更换现货来源，或与需求部门确认调整交付日期。",
+      "evidence": [],
+      "review_id": "REV_4733130ee60a"
+    }
+  },
+  "audit": [
+    {
+      "id": "AUD0003",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "import_assets",
+        "changed": 0,
+        "total": 0
+      }
+    },
+    {
+      "id": "AUD0005",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "import_orders",
+        "changed": 2,
+        "total": 2
+      }
+    },
+    {
+      "id": "AUD0007",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "ingest_samples",
+        "changed": 0,
+        "total": 2
+      }
+    },
+    {
+      "id": "AUD0008",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "source.registered",
+      "details": {
+        "source": "S1",
+        "kind": "catalog",
+        "frequency": "hourly"
+      }
+    },
+    {
+      "id": "AUD0009",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "source.registered",
+      "details": {
+        "source": "S2",
+        "kind": "catalog",
+        "frequency": "every_4h"
+      }
+    },
+    {
+      "id": "AUD0010",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "source.registered",
+      "details": {
+        "source": "S3S4-FEED",
+        "kind": "catalog",
+        "frequency": "daily"
+      }
+    },
+    {
+      "id": "AUD0011",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "source.registered",
+      "details": {
+        "source": "Q-WEEKLY",
+        "kind": "quote_import",
+        "frequency": "weekly"
+      }
+    },
+    {
+      "id": "AUD0012",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "source.registered",
+      "details": {
+        "source": "MFR-ANN",
+        "kind": "announcement",
+        "frequency": "twice_daily"
+      }
+    },
+    {
+      "id": "AUD0013",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "source.registered",
+      "details": {
+        "source": "MFR-WEB",
+        "kind": "announcement",
+        "frequency": "hourly"
+      }
+    },
+    {
+      "id": "AUD0015",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "import_assets",
+        "changed": 0,
+        "total": 2
+      }
+    },
+    {
+      "id": "AUD0019",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "governance-wang",
+      "action": "approval.added",
+      "details": {
+        "approval": "AP-CT40-CT45",
+        "from": "CT-40",
+        "to": "CT-45"
+      }
+    },
+    {
+      "id": "AUD0021",
+      "at": "2026-11-24T21:55:28+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "approval_added",
+        "changed": 1,
+        "total": 2
+      }
+    },
+    {
+      "id": "AUD0024",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "ingest_announcements",
+        "changed": 1,
+        "total": 2
+      }
+    },
+    {
+      "id": "AUD0026",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "fixtures_loaded",
+        "changed": 0,
+        "total": 2
+      }
+    },
+    {
+      "id": "AUD0028",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "source.completed",
+      "details": {
+        "source": "S1",
+        "run_id": "RUN0027",
+        "records": 3,
+        "new_versions": 0
+      }
+    },
+    {
+      "id": "AUD0030",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "source.completed",
+      "details": {
+        "source": "S2",
+        "run_id": "RUN0029",
+        "records": 3,
+        "new_versions": 0
+      }
+    },
+    {
+      "id": "AUD0032",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "source.completed",
+      "details": {
+        "source": "S3S4-FEED",
+        "run_id": "RUN0031",
+        "records": 2,
+        "new_versions": 0
+      }
+    },
+    {
+      "id": "AUD0034",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "source.completed",
+      "details": {
+        "source": "Q-WEEKLY",
+        "run_id": "RUN0033",
+        "records": 3,
+        "new_versions": 0
+      }
+    },
+    {
+      "id": "AUD0036",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "source.completed",
+      "details": {
+        "source": "MFR-ANN",
+        "run_id": "RUN0035",
+        "records": 2,
+        "new_versions": 2
+      }
+    },
+    {
+      "id": "AUD0038",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "source.completed",
+      "details": {
+        "source": "MFR-WEB",
+        "run_id": "RUN0037",
+        "records": 1,
+        "new_versions": 1
+      }
+    },
+    {
+      "id": "AUD0040",
+      "at": "2026-11-24T21:55:29+00:00",
+      "actor": "system",
+      "action": "requirements.recomputed",
+      "details": {
+        "trigger": "collect_due",
+        "changed": 0,
+        "total": 2
+      }
+    }
+  ],
+  "recomputations": [
+    {
+      "id": "REC0002",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "import_assets",
+      "as_of": "2026-10-20",
+      "affected": [],
+      "changed_count": 0
+    },
+    {
+      "id": "REC0004",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "import_orders",
+      "as_of": "2026-10-20",
+      "affected": [
+        {
+          "order_id": "PO-32",
+          "before": null,
+          "after": "blocked",
+          "changed": true,
+          "signature": "{\"codes\": [\"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        },
+        {
+          "order_id": "PO-33",
+          "before": null,
+          "after": "blocked",
+          "changed": true,
+          "signature": "{\"codes\": [\"insufficient_identity_evidence\", \"out_of_stock\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        }
+      ],
+      "changed_count": 2
+    },
+    {
+      "id": "REC0006",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "ingest_samples",
+      "as_of": "2026-10-20",
+      "affected": [
+        {
+          "order_id": "PO-32",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": false,
+          "signature": "{\"codes\": [\"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        },
+        {
+          "order_id": "PO-33",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": false,
+          "signature": "{\"codes\": [\"insufficient_identity_evidence\", \"out_of_stock\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        }
+      ],
+      "changed_count": 0
+    },
+    {
+      "id": "REC0014",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "import_assets",
+      "as_of": "2026-10-20",
+      "affected": [
+        {
+          "order_id": "PO-32",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": false,
+          "signature": "{\"codes\": [\"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        },
+        {
+          "order_id": "PO-33",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": false,
+          "signature": "{\"codes\": [\"insufficient_identity_evidence\", \"out_of_stock\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        }
+      ],
+      "changed_count": 0
+    },
+    {
+      "id": "REC0020",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "approval_added",
+      "as_of": "2026-10-20",
+      "affected": [
+        {
+          "order_id": "PO-32",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": false,
+          "signature": "{\"codes\": [\"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        },
+        {
+          "order_id": "PO-33",
+          "before": "blocked",
+          "after": "releasable",
+          "changed": true,
+          "signature": "{\"codes\": [], \"rec\": \"S4::CT45-N6\", \"v\": \"releasable\"}",
+          "can_release": true,
+          "recommended": {
+            "kind": "approved_substitution",
+            "approval_id": "AP-CT40-CT45",
+            "lkey": "S4::CT45-N6",
+            "source_id": "S4",
+            "item": "CT45-N6"
+          }
+        }
+      ],
+      "changed_count": 1
+    },
+    {
+      "id": "REC0023",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "ingest_announcements",
+      "as_of": "2026-10-20",
+      "affected": [
+        {
+          "order_id": "PO-32",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": true,
+          "signature": "{\"codes\": [\"lead_time_exceeds_due\", \"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        },
+        {
+          "order_id": "PO-33",
+          "before": "releasable",
+          "after": "releasable",
+          "changed": false,
+          "signature": "{\"codes\": [], \"rec\": \"S4::CT45-N6\", \"v\": \"releasable\"}",
+          "can_release": true,
+          "recommended": {
+            "kind": "approved_substitution",
+            "approval_id": "AP-CT40-CT45",
+            "lkey": "S4::CT45-N6",
+            "source_id": "S4",
+            "item": "CT45-N6"
+          }
+        }
+      ],
+      "changed_count": 1
+    },
+    {
+      "id": "REC0025",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "fixtures_loaded",
+      "as_of": "2026-10-20",
+      "affected": [
+        {
+          "order_id": "PO-32",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": false,
+          "signature": "{\"codes\": [\"lead_time_exceeds_due\", \"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        },
+        {
+          "order_id": "PO-33",
+          "before": "releasable",
+          "after": "releasable",
+          "changed": false,
+          "signature": "{\"codes\": [], \"rec\": \"S4::CT45-N6\", \"v\": \"releasable\"}",
+          "can_release": true,
+          "recommended": {
+            "kind": "approved_substitution",
+            "approval_id": "AP-CT40-CT45",
+            "lkey": "S4::CT45-N6",
+            "source_id": "S4",
+            "item": "CT45-N6"
+          }
+        }
+      ],
+      "changed_count": 0
+    },
+    {
+      "id": "REC0039",
+      "at": "2026-10-20T04:00:00+00:00",
+      "trigger": "collect_due",
+      "as_of": "2026-10-20",
+      "affected": [
+        {
+          "order_id": "PO-32",
+          "before": "blocked",
+          "after": "blocked",
+          "changed": false,
+          "signature": "{\"codes\": [\"lead_time_exceeds_due\", \"parameter_conflict\"], \"rec\": null, \"v\": \"blocked\"}",
+          "can_release": false,
+          "recommended": null
+        },
+        {
+          "order_id": "PO-33",
+          "before": "releasable",
+          "after": "releasable",
+          "changed": false,
+          "signature": "{\"codes\": [], \"rec\": \"S4::CT45-N6\", \"v\": \"releasable\"}",
+          "can_release": true,
+          "recommended": {
+            "kind": "approved_substitution",
+            "approval_id": "AP-CT40-CT45",
+            "lkey": "S4::CT45-N6",
+            "source_id": "S4",
+            "item": "CT45-N6"
+          }
+        }
+      ],
+      "changed_count": 0
+    }
+  ],
+  "seq": 40
+}

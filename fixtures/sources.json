@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {"id": "S1", "kind": "catalog", "adapter": "sample_catalog", "frequency": "hourly",
+     "path": "samples/catalog.csv",
+     "note": "华东轴承经销商（样本 catalog.csv 内 source 列）"},
+    {"id": "S2", "kind": "catalog", "adapter": "sample_catalog", "frequency": "every_4h",
+     "path": "samples/catalog.csv",
+     "note": "另一家经销商，字段同样本但额定负载不一致"},
+    {"id": "S3S4-FEED", "kind": "catalog", "adapter": "dealer_wide", "frequency": "daily",
+     "path": "fixtures/dealers_extra.csv", "batch_size": 50,
+     "note": "宽表头经销商目录，演示不同字段格式"},
+    {"id": "Q-WEEKLY", "kind": "quote_import", "adapter": "quote_standard", "frequency": "weekly",
+     "path": "fixtures/quotes_w43.csv", "note": "定时导入的结构化报价"},
+    {"id": "MFR-ANN", "kind": "announcement", "frequency": "twice_daily",
+     "path": "fixtures/announcements_initial.json", "note": "厂商公告 JSON"},
+    {"id": "MFR-WEB", "kind": "announcement", "frequency": "hourly",
+     "path": "fixtures/ann_lead_alert.html", "note": "厂商公告 HTML 页面"}
+  ]
+}

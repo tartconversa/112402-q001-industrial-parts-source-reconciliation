@@ -1,0 +1,4 @@
+quote_id,source,dealer_sku,mfr_part_number,quote_date,unit_price,qty_available,lead_time_days,currency
+Q-W39-I11,S1,I-11,BR-620,2026-09-20,52.00,999,2,CNY
+Q-W43-I11,S1,I-11,BR-620,2026-10-16,55.00,20,7,CNY
+Q-W43-N45,S4,CT45-N6,CT-45,2026-10-16,1250.00,12,10,CNY

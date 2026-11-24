@@ -1,0 +1,65 @@
+[
+  {
+    "id": "REV_642f2227b90b",
+    "order_id": "PO-32",
+    "material_id": null,
+    "code": "parameter_conflict",
+    "severity": "blocker",
+    "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换",
+    "suggested_action": "冻结该候选，转物料治理人员裁定；或选择参数匹配/已批准替代的来源。"
+  },
+  {
+    "id": "REV_023a8aaccf83",
+    "order_id": "PO-31",
+    "material_id": null,
+    "code": "delivery_date_superseded",
+    "severity": "blocker",
+    "message": "新公告 A-LEAD-BR620 改变了交期/停产安排，可能覆盖订单要求的交付日期 2026-11-02",
+    "suggested_action": "采购员凭所附证据复核：催交、改期或切换已批准替代；原订单不被系统自动改写。"
+  },
+  {
+    "id": "REV_4733130ee60a",
+    "order_id": "PO-32",
+    "material_id": null,
+    "code": "lead_time_exceeds_due",
+    "severity": "blocker",
+    "message": "预计到货 2026-12-04 晚于需求日期 2026-11-08（交期 45 天）",
+    "suggested_action": "催交/空运、更换现货来源，或与需求部门确认调整交付日期。"
+  },
+  {
+    "id": "REV_167c24b4e85c",
+    "order_id": null,
+    "material_id": "MAT-BR620",
+    "code": "parameter_conflict",
+    "severity": "warning",
+    "message": "额定参数 load 互相冲突：medium ≠ high，不得视为可互换",
+    "suggested_action": null
+  },
+  {
+    "id": "REV_a308428f5441",
+    "order_id": null,
+    "material_id": "MAT-CT40",
+    "code": "insufficient_identity_evidence",
+    "severity": "warning",
+    "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足",
+    "suggested_action": null
+  },
+  {
+    "id": "REV_be1caed38b21",
+    "order_id": null,
+    "material_id": "MAT-CT45",
+    "code": "missing_attribute",
+    "severity": "warning",
+    "message": "缺少可比对的参数 control_channels，信息不足",
+    "suggested_action": null
+  },
+  {
+    "id": "REV_a5b803598716",
+    "order_id": null,
+    "material_id": "MAT-CT45",
+    "code": "insufficient_identity_evidence",
+    "severity": "warning",
+    "message": "除厂商编码外缺少相互印证的尺寸/额定参数，证据不足",
+    "suggested_action": null
+  }
+]

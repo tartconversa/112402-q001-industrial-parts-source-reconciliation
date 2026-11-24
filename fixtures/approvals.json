@@ -1,0 +1,11 @@
+[
+  {
+    "approval_id": "AP-CT40-CT45",
+    "from_model": "CT-40",
+    "to_model": "CT-45",
+    "equipment_models": ["PACKER-300"],
+    "parameter_ranges": {"control_channels": [4, 8]},
+    "by": "governance-wang",
+    "note": "仅批准 PACKER-300 且控制通道数 4-8 的有条件替代；其他设备/参数不得放行。"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "announcement_id": "A-EOL-CT40",
+    "manufacturer": "智控",
+    "model": "CT-40",
+    "kind": "discontinuation",
+    "title": "CT-40 控制器停产通知",
+    "published_at": "2026-10-08T10:00+08:00",
+    "effective_date": "2026-10-10",
+    "last_order_date": "2026-12-15",
+    "replacement_model": "CT-45",
+    "body": "CT-40 自 2026-10-10 起停止生产，建议迁移到 CT-45；CT-45 对 PACKER 系列的兼容性以设备型号与参数范围审批为准。",
+    "url": "https://announce.example-mfr.local/ct40-eol"
+  },
+  {
+    "announcement_id": "A-XREF-CT45",
+    "manufacturer": "智控",
+    "model": "CT-40",
+    "kind": "replacement",
+    "title": "CT-40 到 CT-45 兼容替代索引",
+    "published_at": "2026-10-09T15:30+08:00",
+    "effective_date": "2026-10-09",
+    "replacement_model": "CT-45",
+    "equipment_models": ["PACKER-300"],
+    "body": "厂商交叉索引列出 CT-45 可用于部分 PACKER 设备；这只是线索，不构成我司替代放行。",
+    "url": "https://announce.example-mfr.local/ct40-ct45-xref"
+  }
+]
